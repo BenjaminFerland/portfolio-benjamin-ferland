@@ -26,3 +26,13 @@ button:active {
   background-color: darkblue;
   transform: translateY(2px); /* Creates a slight "pressed" effect */
 }
+
+<br>
+<br>
+Utilisation de ce site pour l’effet holographique au survol du bouton 'en savoir plus' : <br>
+lien web : https://prismic.io/blog/css-hover-effects#1-holographic-card
+<br>
+code pen de l’effet holographique au survol : https://codepen.io/nefejames/pen/ogvNgJq
+
+
+
