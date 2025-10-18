@@ -10,3 +10,17 @@ Type de navigation : une-page avec scroll et des multipage pour la description d
 <br>
 <br>
 Type de composant Vue.js : Filtre dynamique de projets
+
+Utilisation de google gemini :
+Recherche google : hover vs click css
+
+Information donnée : 
+
+:active Pseudo-class:
+The :active pseudo-class applies styles to an element when it is being activated by the user, typically during the "click" action (i.e., when the mouse button is pressed down on the element). This provides immediate visual feedback that the element is being engaged.
+Code
+
+button:active {
+  background-color: darkblue;
+  transform: translateY(2px); /* Creates a slight "pressed" effect */
+}
