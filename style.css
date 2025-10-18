@@ -157,22 +157,43 @@ header {
 }
 
 
-/* === CAROUSEL PROJETS === */
+/* === SECTION PROJETS === */
 #projets {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 150px;
-    color: var(--color-white);
+  margin-bottom: 150px;
 }
 
 #projets h2 {
-    margin-bottom: 2rem;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-zain-light);
 }
 
-#projets .carousel-item h3 {
-    font-family: var(--font-zain-light);
-    font-size: 2.5rem;
-    margin-top: 1rem;
+#projets img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-projet {
+  background-image: url("medias/bouton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  color: white;
+  font-family: var(--font-zain-light);
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-projet:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 
@@ -205,12 +226,14 @@ header {
 .logo-item:active img {
   opacity: 0.2; /* image plus pâle */
   transform: scale(0.8); /* zoom-out doux */
+  cursor: pointer;
 }
 
 /* Effet au survol et au click qui affiche le nom des logiciels */
 .logo-item:hover .logo-name,
 .logo-item:active .logo-name {
   opacity: 1; /* texte visible */
+  cursor: pointer;
 }
 
 
