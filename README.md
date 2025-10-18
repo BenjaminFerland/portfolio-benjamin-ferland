@@ -10,8 +10,11 @@ Type de navigation : une-page avec scroll et des multipage pour la description d
 <br>
 <br>
 Type de composant Vue.js : Filtre dynamique de projets
+<br>
+<br>
+<br>
 
-Utilisation de google gemini :
+Utilisation de google gemini : <br>
 Recherche google : hover vs click css
 
 Information donnée : 
