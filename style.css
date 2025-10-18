@@ -170,6 +170,10 @@ header {
   display: block;
 }
 
+img.projets-image:hover {
+  transform: scale(1.05);
+}
+
 /* === BOUTON PROJET AVEC EFFET HOLOGRAPHIQUE === */
 .btn-projet {
   position: relative;
@@ -201,7 +205,7 @@ header {
     transparent,
     transparent 40%,
     rgba(0, 0, 0, 0.4),
-    rgba(255, 255, 255, 0.1)
+    rgba(227, 228, 221, 0.1)
   );
   transform: rotate(-45deg);
   opacity: 0;
