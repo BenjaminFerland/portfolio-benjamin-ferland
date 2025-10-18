@@ -176,6 +176,44 @@ header {
 }
 
 
+/* === LOGOS COMPÉTENCES === */
+.logo-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-item img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-name {
+  position: absolute;
+  font-family: var(--font-zai-tornpaper);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Effet au survol et au click qui réduit un peu la grosseur et l'opacité des img des logiciels */
+.logo-item:hover img,
+.logo-item:active img {
+  opacity: 0.2; /* image plus pâle */
+  transform: scale(0.8); /* zoom-out doux */
+}
+
+/* Effet au survol et au click qui affiche le nom des logiciels */
+.logo-item:hover .logo-name,
+.logo-item:active .logo-name {
+  opacity: 1; /* texte visible */
+}
+
+
 /* === COMPÉTENCES (SWIPER) === */
 #competences {
     margin-bottom: 150px;
@@ -187,22 +225,9 @@ header {
     /* espace sous le titre Mes Compétences */
 }
 
-.competences-swiper .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .competences-swiper img {
-    max-width: 80px;
-    transition: transform 0.3s ease;
+    max-width: 80px; /* controle la grosseur des img des logiciels */
 }
-
-.competences-swiper img:hover {
-    transform: scale(1.1);
-}
-
-
 
 /* === SECTION PROJET === */
 #projet {
