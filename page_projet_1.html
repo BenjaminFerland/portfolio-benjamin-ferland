@@ -50,8 +50,8 @@
 
         <!-- Vidéo principale -->
         <div class="mb-5">
-            <iframe width="100%" height="640" src="https://www.youtube.com/embed/qf2fKAnWzsM?si=JqvLRihD4SziAmUY"
-                title="La pilule de trop - Vidéo Projet" frameborder="0"
+            <iframe width="100%" height="640" src="projet.video"
+                title="Vidéo Projet" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
@@ -60,17 +60,17 @@
         <section class="mb-5">
             <h2>Informations du projet</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==1"><strong>Nom du projet :</strong><br>{{ projet.titre }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Nom du projet :</strong><br>{{ projet.titre }} </p>
 
-                <p v-if="projet.id==1"><strong>Mention :</strong><br>{{ projet.mention }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Mention :</strong><br>{{ projet.mention }} </p>
 
-                <p v-if="projet.id==1"><strong>Cours :</strong><br>{{ projet.cours }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Cours :</strong><br>{{ projet.cours }} </p>
 
-                <p v-if="projet.id==1"><strong>Type de projet :</strong><br>{{ projet.type_projet }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Type de projet :</strong><br>{{ projet.type_projet }} </p>
 
-                <p v-if="projet.id==1"><strong>Type de projet :</strong><br>{{ projet.coequipiers.join(', ') }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Type de projet :</strong><br>{{ projet.coequipiers.join(', ') }} </p>
 
-                <p v-if="projet.id==1"><strong>Catégorie :</strong><br>{{ projet.categorie }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Catégorie :</strong><br>{{ projet.categorie }} </p>
             </div>
         </section>
 
@@ -79,12 +79,12 @@
             
             <h2>Description du projet</h2>
             <div v-for="projet in projets">
-            <p v-if="projet.id==1"><strong>Voici le synopsis du projet :</strong><br>{{ projet.description.synopsis }} </p>
+            <p v-if="projet.id==idprojetcourant"><strong>Voici le synopsis du projet :</strong><br>{{ projet.description.synopsis }} </p>
             
-            <p v-if="projet.id==1"><strong>Ce que le professeur nous a demandé :</strong><br>{{ projet.description.demande_professeur }} </p>
+            <p v-if="projet.id==idprojetcourant"><strong>Ce que le professeur nous a demandé :</strong><br>{{ projet.description.demande_professeur }} </p>
            
 
-            <p v-if="projet.id==1"><strong>Ce que nous avons réalisé :</strong><br>{{ projet.description.notre_realisation }} </p>
+            <p v-if="projet.id==idprojetcourant"><strong>Ce que nous avons réalisé :</strong><br>{{ projet.description.notre_realisation }} </p>
             </div>
                 
         </section>
@@ -93,7 +93,7 @@
         <section class="mb-4">
             <h2>Mes rôles dans le projet</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==1">{{ projet.role }} </p>
+                <p v-if="projet.id==idprojetcourant">{{ projet.role }} </p>
                 </div>
         </section>
 
@@ -101,11 +101,14 @@
         <section class="mb-4">
             <h2>Logiciels et techniques utilisées</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==1"><strong>{{ projet.logiciels1 }}</strong></p>
-                <p v-if="projet.id==1"><strong></strong>{{ projet.utilisation1 }}</p>
+                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels1 }}</strong></p>
+                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation1 }}</p>
 
-                <p v-if="projet.id==1"><strong>{{ projet.logiciels2 }}</strong></p>
-                <p v-if="projet.id==1"><strong></strong>{{ projet.utilisation2 }}</p>
+                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels2 }}</strong></p>
+                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation2 }}</p>
+
+                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels3 }}</strong></p>
+                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation3 }}</p>
 
 
                 </div>
@@ -116,14 +119,6 @@
 
         <!-- ===================== NOUVELLES SECTIONS ===================== -->
 
-        <!-- Synopsis -->
-        <section class="mb-5">
-            <h2>Synopsis</h2>
-            <div v-for="projet in projets">
-                <p>{{ projet.synopsis }}</p>
-            </div>
-
-        </section>
 
         <!-- Préproduction -->
         <section class="mb-5">

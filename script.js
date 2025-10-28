@@ -20,16 +20,27 @@ const app = Vue.createApp({
     return { //mettre mes variables en français
       projets: [], // Contient les données des projets chargées depuis projets.json
       idprojetcourant: 2,
-      selectedCategory : Tous,
+      /*selectedCategory : Tous,*/
     };
   },
 
   mounted() {
+    
+    /*au chargement de la page, va récupérer le paramètre d'url nommé projet. stock le this.idprojetcourant */
 
-    /*au chargemetn de la page, va récupérer la param`tre d'url nommé projet. stock le this.idprojetcourant */
-
-
-
+      // Récupère les paramètres de l'URL
+      const urlParams = new URLSearchParams(window.location.search);
+    
+      // Cherche le paramètre nommé "projet"
+      const paramProjet = urlParams.get("projet");
+    
+      // Si "projet" existe dans l'URL, on met à jour idprojetcourant
+      if (paramProjet !== null) {
+        this.idprojetcourant = parseInt(paramProjet);
+      }
+    
+      console.log("ID projet courant :", this.idprojetcourant);
+    
 
     fetch('./projects.json')
       .then(data => data.json())
