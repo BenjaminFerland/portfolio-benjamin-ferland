@@ -55,7 +55,7 @@ h2 {
 
 h3 {
     font-size: 3.5rem;
-    
+
     text-align: center;
 }
 
@@ -157,6 +157,15 @@ header {
     /* espace vers Mes Projets */
 }
 
+/* === SECTION FILTRES PROJETS === */
+#filtres button {
+    padding: 12px 30px;
+    /* augmente la taille interne */
+    font-size: 1.5rem;
+    /* texte plus grand */
+    border-radius: 8px;
+    margin-right: 10px;
+}
 
 /* === SECTION PROJETS === */
 #projets {
@@ -336,7 +345,7 @@ footer {
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     p {

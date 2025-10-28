@@ -1,142 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page d'accueil</title>
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="medias/logo/logo_portfolio.png"
-      sizes="64x64"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page d'accueil</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="medias/logo/logo_portfolio.png" sizes="64x64" />
 
-    <!-- Swiper CSS pour le carrousel compétences -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- CSS personnalisé -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- Swiper CSS pour le carrousel compétences -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-  <body>
-    <!-- ===================== NAVBAR ===================== -->
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent px-3">
-      <!-- Logo ou marque -->
-      <a class="navbar-brand" href="#">B</a>
+  <!-- CSS personnalisé -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <!-- Bouton hamburger pour mobile -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#menu"
-        aria-controls="menu"
-        aria-expanded="false"
-        aria-label="Ouvrir le menu"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-md navbar-light bg-transparent px-3">
+    <!-- Logo ou marque -->
+    <a class="navbar-brand" href="#">B</a>
 
-      <!-- Liens de navigation -->
-      <div class="collapse navbar-collapse justify-content-end" id="menu">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#apropos">À propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projets">Projets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <!-- Bouton hamburger pour mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu"
+      aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- ===================== HEADER ===================== -->
-    <header class="text-center py-5">
-      <h1>Portfolio</h1>
-    </header>
+    <!-- Liens de navigation -->
+    <div class="collapse navbar-collapse justify-content-end" id="menu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#apropos">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projets">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- ===================== SECTION À PROPOS ===================== -->
-    <section
-      id="apropos"
-      class="d-flex justify-content-center align-items-center py-5"
-    >
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Face avant de la carte -->
-          <div class="flip-card-front">
-            <img
-              src="medias/photo_héros_carte.png"
-              alt="Moi"
-              class="img-fluid rounded"
-            />
-          </div>
-          <!-- Face arrière de la carte -->
-          <div class="flip-card-back d-flex align-items-center">
-            <div>
-              <p>
-                Je cherche un poste de vidéaste et monteur vidéo dans le domaine
-                audiovisuel, où je pourrai utiliser mes compétences en montage
-                et en son tout en partageant ma créativité et ma touche
-                personnelle dans les projets.
-              </p>
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header class="text-center py-5">
+    <h1>Portfolio</h1>
+  </header>
+
+  <!-- ===================== SECTION À PROPOS ===================== -->
+  <section id="apropos" class="d-flex justify-content-center align-items-center py-5">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <!-- Face avant de la carte -->
+        <div class="flip-card-front">
+          <img src="medias/photo_héros_carte.png" alt="Moi" class="img-fluid rounded" />
+        </div>
+        <!-- Face arrière de la carte -->
+        <div class="flip-card-back d-flex align-items-center">
+          <div>
+            <p>
+              Je cherche un poste de vidéaste et monteur vidéo dans le domaine
+              audiovisuel, où je pourrai utiliser mes compétences en montage
+              et en son tout en partageant ma créativité et ma touche
+              personnelle dans les projets.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===================== CARROUSEL PROJETS ===================== -->
-    <section id="projets" class="container text-center py-5">
-      <h2>Mes projets</h2>
+  <!-- ===================== CARROUSEL PROJETS ===================== -->
+  <section id="projets" class="container text-center py-5">
+    <h2>Mes projets</h2>
 
-      <!-- Boutons de filtre -->
-      <div id="filtres" class="mb-4">
-        <button id="btn-tous" class="btn btn-outline-dark me-2">Tous</button>
-        <button id="btn-video" class="btn btn-outline-dark me-2">Vidéo</button>
-        <button id="btn-design" class="btn btn-outline-dark"> <!-- au clic d'un bouton de filtre, tu va changer la valeur de ta données catégorie -->
-          Design graphique
-        </button>
-      </div>
+    <!-- Boutons de filtre -->
 
-      <!-- Liste des projets -->
-      <div id="liste-projets"></div>
+    <div id="filtres" class="mb-4">
+      <!-- au clic d'un bouton de filtre, tu va changer la valeur de ta données catégorie -->
+      <button @click="filtrerCategorie('Tous')" class="btn btn-outline-dark">Tous</button>
+      <button @click="filtrerCategorie('Vidéo')" class="btn btn-outline-dark">Vidéo</button>
+      <button @click="filtrerCategorie('Design')" class="btn btn-outline-dark">
+        Design graphique
+      </button>
+    </div>
 
-      <div class="row gy-5 justify-content-center">
-        <!-- gy = vertical gap -->
-        <!-- Projet 1 -->
-        <div class="col-12 col-md-6"  v-for="projet in projets">
-          <div> 
-            <!-- v-if projet.categorie == selectedCategory OU  selectedCategory == Tous-->
+    <!-- Liste des projets -->
+    <div id="liste-projets"></div>
+
+    <div class="row gy-5 justify-content-center">
+
+      <!-- On fait seulement la boucle ici -->
+      <template v-for="projet in projets">
+
+        <!-- On filtre ici -->
+        <div class="col-12 col-md-6" v-if="selectedCategory === 'Tous' || projet.categorie === selectedCategory"> <!-- si la
+          catégorie qu'on clique est "Tous", on affiche tout. Sinon, on affiche seulement les projets qui ont la même
+          catégorie que selectedCategory -->
+
+          <!-- v-if projet.categorie == selectedCategory OU  selectedCategory == Tous-->
+
+          <div>
             <h3 class="mt-4">{{ projet.titre }}</h3>
+
             <a :href="`page_projet_1.html?projet=${projet.id}`">
-              <img
-                :src="projet.miniature"
-                alt="projet_miniature"
-                class="projets-image"
-              />
+              <img :src="projet.miniature" alt="projet_miniature" class="projets-image" />
             </a>
+
             <p>{{ projet.description_courte }}</p>
+
             <a :href="`page_projet_1.html?projet=${projet.id}`">
               <button class="btn-projet mt-3">En savoir plus</button>
             </a>
           </div>
-        </div>
 
-        <!-- Projet 2 
+        </div>
+      </template>
+
+    </div>
+
+
+
+    <!-- Projet 2 
         <div class="col-12 col-md-6">
           <a href="page_projet_2.html">
             <img
@@ -151,7 +141,7 @@
           </a>
         </div>
 -->
-        <!-- Projet 3
+    <!-- Projet 3
         <div class="col-12 col-md-6">
           <img
             src="medias/miniature_projet_3.png"
@@ -162,7 +152,7 @@
           <button class="btn-projet mt-3">En savoir plus</button>
         </div>
 -->
-        <!-- Projet 4 
+    <!-- Projet 4 
         <div class="col-12 col-md-6">
           <img
             src="medias/miniature_projet_4.png"
@@ -173,76 +163,74 @@
           <button class="btn-projet mt-3">En savoir plus</button>
         </div>
       </div>-->
-    </section>
+  </section>
 
-    <!-- ===================== SECTION COMPÉTENCES ===================== -->
-    <section id="competences" class="container text-center py-5">
-      <h2>Mes Compétences</h2>
+  <!-- ===================== SECTION COMPÉTENCES ===================== -->
+  <section id="competences" class="container text-center py-5">
+    <h2>Mes Compétences</h2>
 
-      <!-- Swiper compétences -->
-      <div class="competences-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="logo-item">
-              <img src="medias/logo/logo figma.png" alt="Figma" />
-              <p class="logo-name">Figma</p>
-            </div>
+    <!-- Swiper compétences -->
+    <div class="competences-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="logo-item">
+            <img src="medias/logo/logo figma.png" alt="Figma" />
+            <p class="logo-name">Figma</p>
           </div>
+        </div>
 
-          <div class="swiper-slide">
-            <div class="logo-item">
-              <img src="medias/logo/logo daVinci.png" alt="DaVinci Resolve" />
-              <p class="logo-name">DaVinci Resolve</p>
-            </div>
+        <div class="swiper-slide">
+          <div class="logo-item">
+            <img src="medias/logo/logo daVinci.png" alt="DaVinci Resolve" />
+            <p class="logo-name">DaVinci Resolve</p>
           </div>
+        </div>
 
-          <div class="swiper-slide">
-            <div class="logo-item">
-              <img src="medias/logo/logo github.png" alt="GitHub" />
-              <p class="logo-name">GitHub</p>
-            </div>
+        <div class="swiper-slide">
+          <div class="logo-item">
+            <img src="medias/logo/logo github.png" alt="GitHub" />
+            <p class="logo-name">GitHub</p>
           </div>
+        </div>
 
-          <div class="swiper-slide">
-            <div class="logo-item">
-              <img src="medias/logo/logo photoshop.png" alt="Photoshop" />
-              <p class="logo-name">Photoshop</p>
-            </div>
+        <div class="swiper-slide">
+          <div class="logo-item">
+            <img src="medias/logo/logo photoshop.png" alt="Photoshop" />
+            <p class="logo-name">Photoshop</p>
           </div>
+        </div>
 
-          <div class="swiper-slide">
-            <div class="logo-item">
-              <img
-                src="medias/logo/logo after effects.png"
-                alt="After Effects"
-              />
-              <p class="logo-name">After Effects</p>
-            </div>
+        <div class="swiper-slide">
+          <div class="logo-item">
+            <img src="medias/logo/logo after effects.png" alt="After Effects" />
+            <p class="logo-name">After Effects</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===================== FOOTER ===================== -->
-    <footer id="contact" class="text-center py-4 bg-dark text-white">
-      <h2>Me Contacter</h2>
-      <p>
-        514-247-6971<br />
-        bferland.contact@gmail.com
-      </p>
-      <p class="mt-3">©Benjamin Ferland 2025</p>
-    </footer>
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact" class="text-center py-4 bg-dark text-white">
+    <h2>Me Contacter</h2>
+    <p>
+      514-247-6971<br />
+      bferland.contact@gmail.com
+    </p>
+    <p class="mt-3">©Benjamin Ferland 2025</p>
+  </footer>
 
-    <!-- ===================== SCRIPTS ===================== -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Vue.js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <!-- JS personnalisé -->
-    <script src="script.js"></script>
-  </body>
+  <!-- ===================== SCRIPTS ===================== -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <!-- JS personnalisé -->
+  <script src="script.js"></script>
+</body>
+
 </html>
