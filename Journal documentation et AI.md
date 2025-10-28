@@ -18,6 +18,27 @@ Utilisation de ce site pour l’effet holographique au survol du bouton 'en savo
 lien web : https://prismic.io/blog/css-hover-effects#1-holographic-card
 <br>
 code pen de l’effet holographique au survol : https://codepen.io/nefejames/pen/ogvNgJq
+<br>
+<br>
+Recherche google : how do you retrieves URL parameters
+
+Information donnée : 
+// Get the query string
+let queryString = window.location.search; // "?user=John&user=Doe&id=123"
+
+// Create a URLSearchParams object
+let params = new URLSearchParams(queryString);
+
+// Get a specific parameter
+let firstUserName = params.get('user'); // "John"
+
+// Get all values for a repeated parameter
+let allUserNames = params.getAll('user'); // ["John", "Doe"]
+
+// Check if a parameter exists
+let hasId = params.has('id'); // true
+
+
 
 
 # Utilisation de chatgpt : <br>
