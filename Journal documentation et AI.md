@@ -20,6 +20,59 @@ lien web : https://prismic.io/blog/css-hover-effects#1-holographic-card
 code pen de l’effet holographique au survol : https://codepen.io/nefejames/pen/ogvNgJq
 <br>
 <br>
+Utilisation des notes de web pour créer l'animation gsap : 
+
+Exemples Prof https://tim-montmorency.com/timdoc/582-424MO/swiper/swiper/
+
+Exemple 1
+const swiper = new Swiper('.swiper', {
+  // Default parameters
+  slidesPerView: 1,
+  spaceBetween: 10,
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+  }
+})
+
+Exemple 2
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+<br>
+<br>
 Recherche google : how do you retrieves URL parameters
 
 Information donnée : 
