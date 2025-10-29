@@ -1,13 +1,13 @@
 /* === VARIABLES GLOBALES === */
 :root {
-    --font-zain-light: 'Zain-Light', sans-serif;
-    --font-zai-tornpaper: 'Zai-TornPaper', serif;
-    --title-drop-shadow: 5px -4px 4px 0px rgba(0, 0, 0, 0.5);
+    --font-zain-light: 'Zain-Light', sans-serif; /* Police principale */
+    --font-zai-tornpaper: 'Zai-TornPaper', serif; /* Police pour titres style papier déchiré */
+    --title-drop-shadow: 5px -4px 4px 0px rgba(0, 0, 0, 0.5); 
     --color-white: #EFF3FB;
     --color-black: #000000;
     --color-beige: #DFDAD5;
 
-    --button-image: url('medias/bouton.png');
+    --button-image: url('medias/bouton.png'); /* Image pour le bouton En savoir plus */
 }
 
 /* === FONTS === */
@@ -34,15 +34,14 @@ h1 {
     text-align: center;
     font-size: 7rem;
     margin-bottom: 2rem;
-    color: transparent;
+    color: transparent; /* Texte transparent */
     -webkit-text-stroke: 3px var(--color-black);
     position: relative;
 }
 
 h1:hover {
-    color: var(--color-black);
-    cursor: pointer;
-    /* Changer la couleur du texte en noir au survol */
+    color: var(--color-black); /* Changer la couleur du texte en noir au survol */
+    cursor: pointer; /* Montre que c'est cliquable avec une main */
 }
 
 
@@ -55,20 +54,15 @@ h2 {
 
 h3 {
     font-size: 3.5rem;
-
     text-align: center;
 }
 
 p {
     font-size: 2rem;
-    line-height: 1.6;
-    margin: 0.5rem;
-}
+    line-height: 1.6; /* Espace entre les lignes */
+    margin-left: 5rem;
+    margin-right: 5rem;
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* === NAVBAR === */
@@ -85,15 +79,15 @@ img {
 }
 
 .navbar-brand:hover {
-    color: #ffffff;
+    color: var(--color-white); /* Changer la couleur du texte en blanc au survol */
 }
 
 .navbar-nav .nav-link {
-    font-size: 3rem;
+    font-size: 4rem; /* Grosseur du texte d'À propos Projets Contact */
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--color-white);
+    color: var(--color-white); /* Changer la couleur du texte en blanc au survol */
 }
 
 
@@ -103,68 +97,20 @@ header {
 }
 
 
-/* === SECTION À PROPOS (FLIP-CARD) === */
-.flip-card {
+/* === SECTION À PROPOS === */
+.img-héros {
     display: flex;
     justify-content: center;
-    width: 600px;
-    height: 800px;
-    perspective: 1000px;
-    /* effet 3D */
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    border-radius: 20px;
-}
-
-.flip-card-front img {
-    border-radius: 20px;
-}
-
-.flip-card-back {
-    background: var(--color-beige);
-    transform: rotateY(180deg);
-    padding: 2rem;
-}
-
-/* section apropos */
-#apropos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 0;
-    margin-bottom: 150px;
-    /* espace vers Mes Projets */
+    position: static;
+    width: 30%;
+    height: 30%;
 }
 
 /* === SECTION FILTRES PROJETS === */
 #filtres button {
-    padding: 12px 30px;
-    /* augmente la taille interne */
+    padding: 12px 30px; /* augmente la taille */
     font-size: 1.5rem;
-    /* texte plus grand */
-    border-radius: 8px;
-    margin-right: 10px;
+    margin-right: 10px; /* espace entre les cases de filtres */
 }
 
 /* === SECTION PROJETS === */
@@ -181,7 +127,7 @@ header {
 }
 
 img.projets-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Augmente un peu la grosseur de l'image au survol */
 }
 
 /* === BOUTON PROJET AVEC EFFET HOLOGRAPHIQUE === */
@@ -197,7 +143,7 @@ img.projets-image:hover {
     padding: 1rem 2.5rem;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: pointer; /* Montre que c'est cliquable avec une main */
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -216,11 +162,11 @@ img.projets-image:hover {
             rgba(0, 0, 0, 0.4),
             rgba(227, 228, 221, 0.1));
     transform: rotate(-45deg);
-    opacity: 0;
+    opacity: 0; /* Invisible au départ */
     transition: all 0.5s ease;
 }
 
-/* Au survol : effet holographique et légère mise en relief */
+/* Au survol on a un effet holographique  */
 .btn-projet:hover {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
@@ -231,15 +177,13 @@ img.projets-image:hover {
     transform: rotate(-45deg) translateY(100%);
 }
 
-
-
 /* === LOGOS COMPÉTENCES === */
 .logo-item {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; /* Image au-dessus du texte */
 }
 
 .logo-item img {
@@ -252,44 +196,36 @@ img.projets-image:hover {
     position: absolute;
     font-family: var(--font-zai-tornpaper);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* texte des noms des logiciels qui va apparaitre lentement */
     text-align: center;
-    pointer-events: none;
 }
 
 /* Effet au survol et au click qui réduit un peu la grosseur et l'opacité des img des logiciels */
 .logo-item:hover img,
 .logo-item:active img {
-    opacity: 0.2;
-    /* image plus pâle */
-    transform: scale(0.8);
-    /* zoom-out doux */
-    cursor: pointer;
+    opacity: 0.2; /* image plus pâle */
+    transform: scale(0.8); /* zoom-out doux */
+    cursor: pointer; /* Montre que c'est cliquable avec une main */
 }
 
 /* Effet au survol et au click qui affiche le nom des logiciels */
 .logo-item:hover .logo-name,
 .logo-item:active .logo-name {
-    opacity: 1;
-    /* texte visible */
-    cursor: pointer;
+    opacity: 1; /* texte visible */
+    cursor: pointer; /* Montre que c'est cliquable avec une main */
 }
-
 
 /* === COMPÉTENCES (SWIPER) === */
 #competences {
-    margin-bottom: 150px;
-    /* espace avant le footer */
+    margin-bottom: 150px; /* espace avant le footer */
 }
 
 .competences-swiper {
-    margin-top: 150px;
-    /* espace sous le titre Mes Compétences */
+    margin-top: 150px; /* espace sous le titre Mes Compétences */
 }
 
 .competences-swiper img {
-    max-width: 80px;
-    /* controle la grosseur des img des logiciels */
+    max-width: 80px; /* controle la grosseur des img des logiciels */
 }
 
 /* === SECTION PROJET === */
@@ -311,18 +247,6 @@ img.projets-image:hover {
 .logiciels {
     text-align: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* === FOOTER === */
@@ -355,12 +279,6 @@ footer {
 
     /* === Page d'accueil === */
 
-
-    .flip-card {
-        width: 50%;
-        height: auto;
-    }
-
     .navbar-brand {
         font-size: 4rem;
     }
@@ -368,9 +286,6 @@ footer {
     .navbar-nav .nav-link {
         font-size: 2rem;
     }
-
-
-
 
     /* === SECTION PROJET === */
 

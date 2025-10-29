@@ -49,44 +49,59 @@
         </header>
 
         <!-- Vidéo principale -->
-        <div class="mb-5">
-            <iframe width="100%" height="640" src="projet.video"
-                title="Vidéo Projet" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+        <div class="mb-5" v-for="projet in projets">
+            <video v-if="projet.id == idprojetcourant" :src="projet.video" width="100%" height="640" controls>
+            </video>
         </div>
 
         <!-- Informations principales -->
         <section class="mb-5">
             <h2>Informations du projet</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==idprojetcourant"><strong>Nom du projet :</strong><br>{{ projet.titre }} </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Mention :</strong><br>{{ projet.mention }} </p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Nom du projet :</strong><br>{{ projet.titre }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Cours :</strong><br>{{ projet.cours }} </p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Mention :</strong><br>{{ projet.mention }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Type de projet :</strong><br>{{ projet.type_projet }} </p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Cours :</strong><br>{{ projet.cours }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Type de projet :</strong><br>{{ projet.coequipiers.join(', ') }} </p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Type de projet :</strong><br>{{ projet.type_projet }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Catégorie :</strong><br>{{ projet.categorie }} </p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Coéquipiers :</strong><br>{{ projet.coequipiers.join(', ') }}
+                </p>
+
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Catégorie :</strong><br>{{ projet.categorie }}
+                </p>
+
             </div>
         </section>
 
         <!-- Description longue -->
         <section class="mb-4">
-            
+
             <h2>Description du projet</h2>
             <div v-for="projet in projets">
-            <p v-if="projet.id==idprojetcourant"><strong>Voici le synopsis du projet :</strong><br>{{ projet.description.synopsis }} </p>
-            
-            <p v-if="projet.id==idprojetcourant"><strong>Ce que le professeur nous a demandé :</strong><br>{{ projet.description.demande_professeur }} </p>
-           
+                <p v-if="projet.id==idprojetcourant"><strong>Voici le synopsis du projet :</strong><br>{{
+                    projet.description.synopsis }} </p>
 
-            <p v-if="projet.id==idprojetcourant"><strong>Ce que nous avons réalisé :</strong><br>{{ projet.description.notre_realisation }} </p>
+                <p v-if="projet.id==idprojetcourant"><strong>Ce que le professeur nous a demandé :</strong><br>{{
+                    projet.description.demande_professeur }} </p>
+
+
+                <p v-if="projet.id==idprojetcourant"><strong>Ce que nous avons réalisé :</strong><br>{{
+                    projet.description.notre_realisation }} </p>
             </div>
-                
+
         </section>
 
         <!-- Rôles -->
@@ -94,7 +109,7 @@
             <h2>Mes rôles dans le projet</h2>
             <div v-for="projet in projets">
                 <p v-if="projet.id==idprojetcourant">{{ projet.role }} </p>
-                </div>
+            </div>
         </section>
 
         <!-- Logiciels -->
@@ -111,8 +126,8 @@
                 <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation3 }}</p>
 
 
-                </div>
-               
+            </div>
+
             <!-- <p><strong>DaVinci Resolve</strong><br> Pour la création du montage vidéo, de la conception sonore, et du
                 compositing</p> -->
         </section>

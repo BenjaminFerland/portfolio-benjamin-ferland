@@ -53,29 +53,25 @@
   </header>
 
   <!-- ===================== SECTION À PROPOS ===================== -->
-  <section id="apropos" class="d-flex justify-content-center align-items-center py-5">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <!-- Face avant de la carte -->
-        <div class="flip-card-front">
-          <img src="medias/photo_héros_carte.png" alt="Moi" class="img-fluid rounded" />
-        </div>
-        <!-- Face arrière de la carte -->
-        <div class="flip-card-back d-flex align-items-center">
-          <div>
-            <p>
-              Je cherche un poste de vidéaste et monteur vidéo dans le domaine
-              audiovisuel, où je pourrai utiliser mes compétences en montage
-              et en son tout en partageant ma créativité et ma touche
-              personnelle dans les projets.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section id="apropos" class="d-flex flex-column justify-content-center align-items-center py-5">
+    <img src="medias/photo_héros.png" class="img-héros" alt="photo_héros">
+    <p>Je suis un étudiant à sa dernière année en technique d'intégration multimédia au Collège Montmorency de 20 ans,
+      passionné par la vidéo. J'adore raconter des histoires immersives et originales qui reflètent ma personnalité et
+      mes idées créatives.
+      Je m'inspire des films de Quentin Tarantino, du youtubeur Gawx Art et je prête l'oreille à une grande
+      variété de musiques, allant du jazz au classique, pour créer des bandes sonores qui nourrit mes projets de
+      variété.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Je suis à la cherche d'un poste de vidéaste et monteur vidéo dans le domaine
+      audiovisuel, où je pourrai utiliser mes compétences en montage
+      et en son tout en partageant ma créativité et ma touche
+      personnelle dans les projets.</p>
   </section>
 
-  <!-- ===================== CARROUSEL PROJETS ===================== -->
+  <!-- ===================== SECTIONS PROJETS ===================== -->
   <section id="projets" class="container text-center py-5">
     <h2>Mes projets</h2>
 
@@ -90,9 +86,6 @@
       </button>
     </div>
 
-    <!-- Liste des projets -->
-    <div id="liste-projets"></div>
-
     <div class="row gy-5 justify-content-center">
 
       <!-- On fait seulement la boucle ici -->
@@ -103,7 +96,7 @@
           catégorie qu'on clique est "Tous", on affiche tout. Sinon, on affiche seulement les projets qui ont la même
           catégorie que selectedCategory -->
 
-          <!-- v-if projet.categorie == selectedCategory OU  selectedCategory == Tous-->
+          <!-- Code du prof pour m'aider :  v-if projet.categorie == selectedCategory OU  selectedCategory == Tous-->
 
           <div>
             <h3 class="mt-4">{{ projet.titre }}</h3>
@@ -121,48 +114,7 @@
 
         </div>
       </template>
-
     </div>
-
-
-
-    <!-- Projet 2 
-        <div class="col-12 col-md-6">
-          <a href="page_projet_2.html">
-            <img
-              src="medias/miniature_projet_2.png"
-              alt="Projet 2"
-              class="projets-image"
-            />
-          </a>
-          <p>Un trailer photo présentant une fausse série policière.</p>
-          <a href="page_projet_2.html">
-            <button class="btn-projet mt-3">En savoir plus</button>
-          </a>
-        </div>
--->
-    <!-- Projet 3
-        <div class="col-12 col-md-6">
-          <img
-            src="medias/miniature_projet_3.png"
-            alt="Projet 3"
-            class="projets-image"
-          />
-          <p>Une vidéo en stop motion illustrant le burnout.</p>
-          <button class="btn-projet mt-3">En savoir plus</button>
-        </div>
--->
-    <!-- Projet 4 
-        <div class="col-12 col-md-6">
-          <img
-            src="medias/miniature_projet_4.png"
-            alt="Projet 4"
-            class="projets-image"
-          />
-          <p>Une vidéo en macro qui explore la tristesse et la colère.</p>
-          <button class="btn-projet mt-3">En savoir plus</button>
-        </div>
-      </div>-->
   </section>
 
   <!-- ===================== SECTION COMPÉTENCES ===================== -->

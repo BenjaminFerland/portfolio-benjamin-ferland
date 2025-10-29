@@ -1,33 +1,15 @@
-// Crée le swiper compétences
-/*const competencesSwiper = new Swiper('.competences-swiper', {
-  direction: 'horizontal', // Ça défile à l’horizontale
-  slidesPerView: 3,       // 3 slides visibles
-  spaceBetween: 30,       // Espace entre chaque slide
-  scrollbar: {
-    el: '.swiper-scrollbar', // Barre de scroll
-    draggable: true,         // On peut la bouger
-  },
-  breakpoints: {
-    320: { slidesPerView: 2, spaceBetween: 20 },   // Petit écran
-    768: { slidesPerView: 3, spaceBetween: 30 },   // Tablette
-    1024: { slidesPerView: 5, spaceBetween: 40 }   // Grand écran
-  }
-});*/
-
-
 const app = Vue.createApp({
   data() {
-    return { //mettre mes variables en français
+    return {
       projets: [], // Contient les données des projets chargées depuis projets.json
-      idprojetcourant: 2,
       selectedCategory: "Tous", // Catégorie choisie
     };
   },
 
   methods: {
     // change la catégorie selon le bouton cliqué
-    filtrerCategorie(categorie) {
-      this.selectedCategory = categorie;
+    filtrerCategorie(categorie) { // Fonction qui filtre les projets de la catégorie choisie
+      this.selectedCategory = categorie; //Affiche seulement les projets de la catégorie sélectionnée
     }
   },
 
@@ -50,9 +32,9 @@ const app = Vue.createApp({
     console.log("ID projet courant :", this.idprojetcourant);
 
 
-    fetch('./projects.json')
-      .then(data => data.json())
-      .then(data => {
+    fetch('./projects.json') // Va chercher les infos des projets dans le fichier projects.json
+      .then(data => data.json()) //on transforme les données en JSON 
+      .then(data => { // Quand c’est en json, on récupère les données dans le "data"
         this.projets = data; // Stocke les projets dans le tableau Vue
         console.log("Projets chargés :", this.projets);
       });
@@ -62,56 +44,18 @@ const app = Vue.createApp({
 app.mount('#projets'); // Attache l'App Vue à l'élément HTML avec l'id #projet
 
 
-// 
-
-
-/*Exemples Prof https://tim-montmorency.com/timdoc/582-424MO/swiper/swiper/ */
-
-/*Exemple 1*/
-/*const swiper = new Swiper('.swiper', {
-  // Default parameters
-  slidesPerView: 1,
-  spaceBetween: 10,
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 4,
-      spaceBetween: 40
-    }
-  }
-})*/
-
-
-/*Exemple 2*/
-/*const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
+// Crée le swiper compétences
+const competencesSwiper = new Swiper('.competences-swiper', {
+  direction: 'horizontal', // Ça défile à l’horizontale
+  slidesPerView: 3,       // 3 slides visibles
+  spaceBetween: 30,       // Espace entre chaque slide
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: '.swiper-scrollbar', // Barre de scroll
+    draggable: true,         // On peut la bouger
   },
-});*/
+  breakpoints: {
+    320: { slidesPerView: 2, spaceBetween: 20 },   // Petit écran
+    768: { slidesPerView: 3, spaceBetween: 30 },   // Tablette
+    1024: { slidesPerView: 5, spaceBetween: 40 }   // Grand écran
+  }
+});
