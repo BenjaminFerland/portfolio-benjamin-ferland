@@ -336,19 +336,15 @@ img.projets-image:hover {
 }
 
 
-/* === FOOTER === */
-footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    text-align: center;
-}
-
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
     body {
-        background: url("medias/background_mobile.webp") no-repeat center/cover fixed;
+        min-height: calc((1vw + 1vh) * 75);
+        margin: 2em 0;
+        padding: 4em;
+        box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+        background: #fffef0;
+        filter: url(#wavy2);
     }
 
     h1 {
