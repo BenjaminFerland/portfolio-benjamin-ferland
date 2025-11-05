@@ -310,6 +310,12 @@ img.projets-image:hover {
     opacity: 1;
 }
 
+/* === lien linkedin dans le footer === */
+.linkedin {
+    max-width: 300px;
+}
+
+
 /* Animation de la flèche */
 @keyframes floatUpDown {
     0% {
@@ -398,6 +404,12 @@ img.projets-image:hover {
         background: #ffffff;
         opacity: 1;
         transform: scale(1.3);
+    }
+
+
+    /* === lien linkedin dans le footer === */
+    .linkedin {
+    max-width: 200px;
     }
 
     /* === SECTION PROJET === */
