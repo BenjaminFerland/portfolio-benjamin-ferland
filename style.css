@@ -341,17 +341,6 @@ img.projets-image:hover {
     animation: floatUpDown 1.6s ease-in-out infinite;
 }
 
-/* === FIX BACKGROUND ON IOS === */
-/* Safari sur iPhone et iPad ne supporte pas background-attachment: fixed */
-@supports (-webkit-touch-callout: none) {
-    body {
-        background-attachment: scroll !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-    }
-}
-
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
     h1 {
