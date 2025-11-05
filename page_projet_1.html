@@ -2,21 +2,21 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Projet</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="medias/logo/logo_portfolio.png" sizes="64x64" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <!-- CSS personnalisé -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -30,85 +30,109 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="menu">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html#apropos">À propos</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#projets">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#apropos">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#projets">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- ===================== CONTENU DU PROJET ===================== -->
     <section id="projets" class="container py-5">
-
         <!-- Titre du projet -->
         <header class="text-center mb-5">
             <div v-for="projet in projets">
-                <h1 class="fw-bold" v-if="projet.id==idprojetcourant"> {{ projet.titre }} </h1>
+                <h1 class="fw-bold" v-if="projet.id==idprojetcourant">
+                    {{ projet.titre }}
+                </h1>
             </div>
             <p class="text-muted">Projet académique — Cours 582-312-MO Vidéo 2</p>
         </header>
 
         <!-- Vidéo principale -->
-        <div class="mb-5" v-for="projet in projets">
-            <video v-if="projet.id == idprojetcourant" :src="projet.video" width="100%" height="640" controls>
-            </video>
-        </div>
+        <div class="mb-5" v-for="projet in projets" :key="projet.id">
+            <iframe
+              v-if="projet.id == idprojetcourant"
+              width="100%"
+              height="640"
+              :src="projet.video.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0]"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
 
         <!-- Informations principales -->
         <section class="mb-5">
             <h2>Informations du projet</h2>
             <div v-for="projet in projets">
-
                 <p v-if="projet.id == idprojetcourant">
-                    <strong>Nom du projet :</strong><br>{{ projet.titre }}
+                    <strong>Nom du projet :</strong><br />{{ projet.titre }}
                 </p>
 
                 <p v-if="projet.id == idprojetcourant">
-                    <strong>Mention :</strong><br>{{ projet.mention }}
+                    <strong>Mention :</strong><br />{{ projet.mention }}
                 </p>
 
                 <p v-if="projet.id == idprojetcourant">
-                    <strong>Cours :</strong><br>{{ projet.cours }}
+                    <strong>Cours :</strong><br />{{ projet.cours }}
                 </p>
 
                 <p v-if="projet.id == idprojetcourant">
-                    <strong>Type de projet :</strong><br>{{ projet.type_projet }}
+                    <strong>Type de projet :</strong><br />{{ projet.type_projet }}
                 </p>
 
                 <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
-                    <strong>Coéquipiers :</strong><br>{{ projet.coequipiers.join(', ') }}
+                    <strong>Coéquipiers :</strong><br />{{ projet.coequipiers.join(', ')
+                    }}
                 </p>
 
                 <p v-if="projet.id == idprojetcourant">
-                    <strong>Catégorie :</strong><br>{{ projet.categorie }}
+                    <strong>Catégorie :</strong><br />{{ projet.categorie }}
                 </p>
-
             </div>
         </section>
 
         <!-- Description longue -->
         <section class="mb-4">
-
             <h2>Description du projet</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==idprojetcourant"><strong>Voici le synopsis du projet :</strong><br>{{
-                    projet.description.synopsis }} </p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong>Voici le synopsis du projet :</strong><br />{{
+                    projet.description.synopsis }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Ce que le professeur nous a demandé :</strong><br>{{
-                    projet.description.demande_professeur }} </p>
+                <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
+                    <strong>Ce que le professeur nous a demandé :</strong><br />{{
+                    projet.description.demande_professeur }}
+                </p>
 
+                <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
+                    <strong>Ce que nous avons réalisé :</strong><br />{{
+                    projet.description.notre_realisation }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>Ce que nous avons réalisé :</strong><br>{{
-                    projet.description.notre_realisation }} </p>
-            </div>
+                <p v-if="projet.id == idprojetcourant && ![1, 3, 4].includes(idprojetcourant)">
+                    <strong>Ce que le professeur m'a demandé :</strong><br />{{ projet.demande_professeur_seul }}
+            </p>
+            <p v-if="projet.id == idprojetcourant && ![1, 3, 4].includes(idprojetcourant)">
+                <strong>Ce que j'ai réalisé :</strong><br />{{ projet.ma_realisation }}
+            </p>
 
-        </section>
+        </div>
+    </section>
 
         <!-- Rôles -->
         <section class="mb-4">
             <h2>Mes rôles dans le projet</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==idprojetcourant">{{ projet.role }} </p>
+                <p v-if="projet.id==idprojetcourant">{{ projet.role }}</p>
             </div>
         </section>
 
@@ -116,16 +140,26 @@
         <section class="mb-4">
             <h2>Logiciels et techniques utilisées</h2>
             <div v-for="projet in projets">
-                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels1 }}</strong></p>
-                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation1 }}</p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong>{{ projet.logiciels1 }}</strong>
+                </p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong></strong>{{ projet.utilisation1 }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels2 }}</strong></p>
-                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation2 }}</p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong>{{ projet.logiciels2 }}</strong>
+                </p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong></strong>{{ projet.utilisation2 }}
+                </p>
 
-                <p v-if="projet.id==idprojetcourant"><strong>{{ projet.logiciels3 }}</strong></p>
-                <p v-if="projet.id==idprojetcourant"><strong></strong>{{ projet.utilisation3 }}</p>
-
-
+                <p v-if="projet.id==idprojetcourant">
+                    <strong>{{ projet.logiciels3 }}</strong>
+                </p>
+                <p v-if="projet.id==idprojetcourant">
+                    <strong></strong>{{ projet.utilisation3 }}
+                </p>
             </div>
 
             <!-- <p><strong>DaVinci Resolve</strong><br> Pour la création du montage vidéo, de la conception sonore, et du
@@ -134,16 +168,16 @@
 
         <!-- ===================== NOUVELLES SECTIONS ===================== -->
 
-
         <!-- Préproduction -->
-        <section class="mb-5" v-if="idprojetcourant == 1"> <!-- l'affiche seulement pour le projet 1 -->
+        <section class="mb-5" v-if="idprojetcourant == 1">
+            <!-- l'affiche seulement pour le projet 1 -->
             <h2>Préproduction</h2>
 
             <h3 class="mt-4">Moodboard</h3>
             <div class="row justify-content-center">
                 <div class="col-auto">
                     <img src="medias/processus de création_projet_1/moodboard_projet_1.PNG" alt="Moodboard du projet"
-                        class="img-fluid rounded shadow my-3 d-block mx-auto">
+                        class="img-fluid rounded shadow my-3 d-block mx-auto" />
                 </div>
             </div>
 
@@ -151,74 +185,82 @@
             <div class="row g-3 mt-2 justify-content-center">
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_1.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 1">
+                        class="img-fluid rounded shadow" alt="Storyboard 1" />
                 </div>
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_2.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 2">
+                        class="img-fluid rounded shadow" alt="Storyboard 2" />
                 </div>
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_3.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 3">
+                        class="img-fluid rounded shadow" alt="Storyboard 3" />
                 </div>
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_4.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 4">
+                        class="img-fluid rounded shadow" alt="Storyboard 4" />
                 </div>
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_5.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 5">
+                        class="img-fluid rounded shadow" alt="Storyboard 5" />
                 </div>
                 <div class="col-md-9">
                     <img src="medias/processus de création_projet_1/storyboard/storyboard_scène_6.PNG"
-                        class="img-fluid rounded shadow" alt="Storyboard 6">
+                        class="img-fluid rounded shadow" alt="Storyboard 6" />
                 </div>
             </div>
         </section>
 
         <!-- Direction photo -->
-        <section class="mb-5" v-if="idprojetcourant == 1"> <!-- l'affiche seulement pour le projet 1 -->
+        <section class="mb-5" v-if="idprojetcourant == 1">
+            <!-- l'affiche seulement pour le projet 1 -->
             <h2>Direction photo</h2>
             <div v-for="projet in projets">
                 <p>{{ projet.direction_photo }}</p>
             </div>
             <div class="row g-3 mt-3">
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction photo/direction photo_image_1.png"
-                        alt="Direction photo 1" class="img-fluid rounded shadow"></div>
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction photo/direction photo_image_2.jpg"
-                        alt="Direction photo 2" class="img-fluid rounded shadow"></div>
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction photo/direction photo_image_3.jpg"
-                        alt="Direction photo 3" class="img-fluid rounded shadow"></div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction photo/direction photo_image_1.png"
+                        alt="Direction photo 1" class="img-fluid rounded shadow" />
+                </div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction photo/direction photo_image_2.jpg"
+                        alt="Direction photo 2" class="img-fluid rounded shadow" />
+                </div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction photo/direction photo_image_3.jpg"
+                        alt="Direction photo 3" class="img-fluid rounded shadow" />
+                </div>
             </div>
         </section>
 
         <!-- Direction artistique -->
-        <section class="mb-5" v-if="idprojetcourant == 1"> <!-- l'affiche seulement pour le projet 1 -->
+        <section class="mb-5" v-if="idprojetcourant == 1">
+            <!-- l'affiche seulement pour le projet 1 -->
             <h2>Direction artistique</h2>
             <div v-for="projet in projets">
                 <p>{{ projet.direction_artistique }}</p>
             </div>
 
             <div class="row g-3 mt-3">
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction artistique/direction artistique_image_1_copie.jpg"
-                        alt="Direction artistique 1" class="img-fluid rounded shadow"></div>
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction artistique/direction artistique_image_2_copie.jpg"
-                        alt="Direction artistique 2" class="img-fluid rounded shadow"></div>
-                <div class="col-md-4"><img
-                        src="medias/processus de création_projet_1/direction artistique/direction artistique_image_3_copie.jpg"
-                        alt="Direction artistique 3" class="img-fluid rounded shadow"></div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction artistique/direction artistique_image_1_copie.jpg"
+                        alt="Direction artistique 1" class="img-fluid rounded shadow" />
+                </div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction artistique/direction artistique_image_2_copie.jpg"
+                        alt="Direction artistique 2" class="img-fluid rounded shadow" />
+                </div>
+                <div class="col-md-4">
+                    <img src="medias/processus de création_projet_1/direction artistique/direction artistique_image_3_copie.jpg"
+                        alt="Direction artistique 3" class="img-fluid rounded shadow" />
+                </div>
             </div>
         </section>
     </section>
 
     <!-- flèche 'Retour en haut' -->
     <div id="backToTop" class="back-to-top">
-        <img src="medias/flèche.png" alt="Retour en haut">
+        <img src="medias/flèche.png" alt="Retour en haut" />
         <p>Retour en haut</p>
     </div>
 
