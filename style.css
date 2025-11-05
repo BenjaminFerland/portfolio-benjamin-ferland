@@ -1,13 +1,16 @@
 /* === VARIABLES GLOBALES === */
 :root {
-    --font-zain-light: 'Zain-Light', sans-serif; /* Police principale */
-    --font-zai-tornpaper: 'Zai-TornPaper', serif; /* Police pour titres style papier déchiré */
-    --title-drop-shadow: 5px -4px 4px 0px rgba(0, 0, 0, 0.5); 
+    --font-zain-light: 'Zain-Light', sans-serif;
+    /* Police principale */
+    --font-zai-tornpaper: 'Zai-TornPaper', serif;
+    /* Police pour titres style papier déchiré */
+    --title-drop-shadow: 5px -4px 4px 0px rgba(0, 0, 0, 0.5);
     --color-white: #EFF3FB;
     --color-black: #000000;
     --color-beige: #DFDAD5;
 
-    --button-image: url('medias/bouton.png'); /* Image pour le bouton En savoir plus */
+    --button-image: url('medias/bouton.png');
+    /* Image pour le bouton En savoir plus */
 }
 
 /* === FONTS === */
@@ -24,7 +27,7 @@
 /* === GLOBAL === */
 body {
     font-family: var(--font-zain-light);
-    background: var(--color-white) url("medias/background_desktop.webp") no-repeat center/cover fixed;
+    background: url("medias/background_desktop.webp") no-repeat center/cover fixed;
     color: var(--color-black);
     margin: 0;
 }
@@ -34,14 +37,17 @@ h1 {
     text-align: center;
     font-size: 7rem;
     margin-bottom: 2rem;
-    color: transparent; /* Texte transparent */
+    color: transparent;
+    /* Texte transparent */
     -webkit-text-stroke: 3px var(--color-black);
     position: relative;
 }
 
 h1:hover {
-    color: var(--color-black); /* Changer la couleur du texte en noir au survol */
-    cursor: pointer; /* Montre que c'est cliquable avec une main */
+    color: var(--color-black);
+    /* Changer la couleur du texte en noir au survol */
+    cursor: pointer;
+    /* Montre que c'est cliquable avec une main */
 }
 
 
@@ -59,7 +65,8 @@ h3 {
 
 p {
     font-size: 2rem;
-    line-height: 1.6; /* Espace entre les lignes */
+    line-height: 1.6;
+    /* Espace entre les lignes */
     margin-left: 5rem;
     margin-right: 5rem;
 
@@ -79,15 +86,18 @@ p {
 }
 
 .navbar-brand:hover {
-    color: var(--color-white); /* Changer la couleur du texte en blanc au survol */
+    color: var(--color-white);
+    /* Changer la couleur du texte en blanc au survol */
 }
 
 .navbar-nav .nav-link {
-    font-size: 4rem; /* Grosseur du texte d'À propos Projets Contact */
+    font-size: 4rem;
+    /* Grosseur du texte d'À propos Projets Contact */
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--color-white); /* Changer la couleur du texte en blanc au survol */
+    color: var(--color-white);
+    /* Changer la couleur du texte en blanc au survol */
 }
 
 
@@ -108,9 +118,11 @@ header {
 
 /* === SECTION FILTRES PROJETS === */
 #filtres button {
-    padding: 12px 30px; /* augmente la taille */
+    padding: 12px 30px;
+    /* augmente la taille */
     font-size: 1.5rem;
-    margin-right: 10px; /* espace entre les cases de filtres */
+    margin-right: 10px;
+    /* espace entre les cases de filtres */
 }
 
 /* === SECTION PROJETS === */
@@ -126,7 +138,8 @@ header {
 }
 
 img.projets-image:hover {
-    transform: scale(1.05); /* Augmente un peu la grosseur de l'image au survol */
+    transform: scale(1.05);
+    /* Augmente un peu la grosseur de l'image au survol */
 }
 
 /* === BOUTON PROJET AVEC EFFET HOLOGRAPHIQUE === */
@@ -142,7 +155,8 @@ img.projets-image:hover {
     padding: 1rem 2.5rem;
     border: none;
     border-radius: 10px;
-    cursor: pointer; /* Montre que c'est cliquable avec une main */
+    cursor: pointer;
+    /* Montre que c'est cliquable avec une main */
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -161,7 +175,8 @@ img.projets-image:hover {
             rgba(0, 0, 0, 0.4),
             rgba(227, 228, 221, 0.1));
     transform: rotate(-45deg);
-    opacity: 0; /* Invisible au départ */
+    opacity: 0;
+    /* Invisible au départ */
     transition: all 0.5s ease;
 }
 
@@ -182,7 +197,8 @@ img.projets-image:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Image au-dessus du texte */
+    flex-direction: column;
+    /* Image au-dessus du texte */
 }
 
 .logo-item img {
@@ -196,44 +212,53 @@ img.projets-image:hover {
     font-family: var(--font-zai-tornpaper);
     font-size: 1.5rem;
     opacity: 0;
-    transition: opacity 0.3s ease; /* texte des noms des logiciels qui va apparaitre lentement */
+    transition: opacity 0.3s ease;
+    /* texte des noms des logiciels qui va apparaitre lentement */
     text-align: center;
 }
 
 /* Effet au survol et au click qui réduit un peu la grosseur et l'opacité des img des logiciels */
 .logo-item:hover img,
 .logo-item:active img {
-    opacity: 0.2; /* image plus pâle */
-    transform: scale(0.8); /* zoom-out doux */
-    cursor: pointer; /* Montre que c'est cliquable avec une main */
+    opacity: 0.2;
+    /* image plus pâle */
+    transform: scale(0.8);
+    /* zoom-out doux */
+    cursor: pointer;
+    /* Montre que c'est cliquable avec une main */
 }
 
 /* Effet au survol et au click qui affiche le nom des logiciels */
 .logo-item:hover .logo-name,
 .logo-item:active .logo-name {
-    opacity: 1; /* texte visible */
-    cursor: pointer; /* Montre que c'est cliquable avec une main */
+    opacity: 1;
+    /* texte visible */
+    cursor: pointer;
+    /* Montre que c'est cliquable avec une main */
 }
 
 /* === COMPÉTENCES (SWIPER) === */
 #competences {
-    margin-bottom: 150px; /* espace avant le footer */
+    margin-bottom: 150px;
+    /* espace avant le footer */
 }
 
 .competences-swiper {
-    margin-top: 150px; /* espace sous le titre Mes Compétences */
+    margin-top: 150px;
+    /* espace sous le titre Mes Compétences */
     overflow: hidden;
 }
 
 .competences-swiper img {
-    max-width: 80px; /* controle la grosseur des img des logiciels */
+    max-width: 80px;
+    /* controle la grosseur des img des logiciels */
 }
 
 /* Pagination Swiper */
 .swiper-pagination {
-  display: none;
-  z-index: 10;
-  /* si tu veux que la pagination soit centrée et en dessous du swiper,
+    display: none;
+    z-index: 10;
+    /* si tu veux que la pagination soit centrée et en dessous du swiper,
      laisse display:none ici et active la version mobile dans la media query */
 }
 
@@ -262,19 +287,23 @@ img.projets-image:hover {
 
 .back-to-top {
     position: relative;
+    margin-bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* compensation */
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    z-index: 9999;
     opacity: 0;
     pointer-events: none;
+    z-index: 9999;
     transition: opacity 0.3s ease;
 }
 
 .back-to-top p {
-   font-family: var(--font-zai-tornpaper);
-   font-size: x-large;
+    font-family: var(--font-zai-tornpaper);
+    font-size: x-large;
 }
 
 .back-to-top.show {
@@ -283,12 +312,25 @@ img.projets-image:hover {
 
 /* Animation de la flèche */
 @keyframes floatUpDown {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); } /* monte un peu */
-    100% { transform: translateY(0); } /* redescend */
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    /* monte un peu */
+    100% {
+        transform: translateY(0);
+    }
+
+    /* redescend */
 }
 
 .back-to-top.show img {
+    width: 8rem;
+    height: auto;
     pointer-events: auto;
     animation: floatUpDown 1.6s ease-in-out infinite;
 }
@@ -305,6 +347,10 @@ footer {
 
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
+    body {
+        background-image: url("medias/background_mobile1.jpg") no-repeat center/cover fixed;
+    }
+
     h1 {
         font-size: 4rem;
     }
@@ -334,53 +380,57 @@ footer {
 
     /* === HEADER === */
     header {
-    margin-top: 20px;
+        margin-top: 20px;
     }
 
     /* === COMPÉTENCES (SWIPER) === */
     .swiper-pagination {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
-    position: relative; /* position normale sous le contenu */
-  }
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        position: relative;
+        /* position normale sous le contenu */
+    }
 
-  /* Petits points ronds */
-  .swiper-pagination-bullet {
-    background: #000000; /* couleur des points */
-    opacity: 0.45;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 6px;
-    transition: opacity 0.25s, transform 0.25s;
-    box-shadow: none;
-  }
+    /* Petits points ronds */
+    .swiper-pagination-bullet {
+        background: #000000;
+        /* couleur des points */
+        opacity: 0.45;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 6px;
+        transition: opacity 0.25s, transform 0.25s;
+        box-shadow: none;
+    }
 
-  /* Point actif */
-  .swiper-pagination-bullet-active {
-    background: #ffffff;
-    opacity: 1;
-    transform: scale(1.3);
-  }
+    /* Point actif */
+    .swiper-pagination-bullet-active {
+        background: #ffffff;
+        opacity: 1;
+        transform: scale(1.3);
+    }
 
     /* === SECTION PROJET === */
 
 
     /* === SECTION FILTRES PROJETS === */
     #filtres button {
-    padding: 5px 10px; /* augmente la taille */
-    margin-right: 5px; /* espace entre les cases de filtres */
-}
+        padding: 5px 10px;
+        /* augmente la taille */
+        margin-right: 5px;
+        /* espace entre les cases de filtres */
+    }
 
     .img-héros {
-    display: flex;
-    justify-content: center;
-    position: static;
-    width: 80%;
-    height: 80%;
-}
+        display: flex;
+        justify-content: center;
+        position: static;
+        width: 80%;
+        height: 80%;
+    }
 
     #projet h1 {
         font-size: 2.5rem;
@@ -388,5 +438,11 @@ footer {
 
     #projet h3 {
         font-size: 1.8rem;
+    }
+
+    /* === flèche 'Retour en haut' === */
+    .back-to-top.show img {
+        width: 5rem;
+        height: auto;
     }
 }
