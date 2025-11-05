@@ -27,7 +27,7 @@
 /* === GLOBAL === */
 body {
     font-family: var(--font-zain-light);
-    background: url("medias/background_desktop.webp") no-repeat center/cover fixed;
+    background: url("medias/background_desktop.webp") no-repeat center/contain fixed;
     color: var(--color-black);
     margin: 0;
 }
