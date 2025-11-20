@@ -2,24 +2,14 @@
     {
         "id": 1,
         "titre": "La pilule de trop",
-        "categorie": "Court-Métrage",
+        "categorie": "Vidéo",
         "video": "https://youtu.be/qf2fKAnWzsM?si=0aAoABYFdY96bNKj",
         "mention": "Académique",
         "cours": "582-312-MO Vidéo 2",
         "type_projet": "Équipe",
         "coequipiers": [
-            {
-                "nom": "Ryan Dufault",
-                "photo": "medias/Ryan Dufault.jpg"
-            },
-            {
-                "nom": "Yannick Chamberland",
-                "photo": "medias/Yannick Chamberland.jpg"
-            },
-            {
-                "nom": "Mohamed Ali Sadki",
-                "photo": "medias/Mohamed Ali Sadki.jpg"
-            }
+            "Ryan Dufault",
+            "Yannick Chamberland"
         ],
         "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -34,7 +24,7 @@
         "direction_photo": "Lumières faibles et tamisées pour renforcer l'ambiance sombre. Utilisation de lampes et de lightpanels pour créer des zones d'ombre. Travellings doux et variations de profondeur de champ pour souligner les symboles (télévisions, bocaux). Les ralentis accentuent la stagnation du temps et l'isolement du protagoniste.",
         "direction_artistique": "La direction artistique de notre métrage se distingue par l'utilisation de décors symboliques et oppressants, où les espaces restreints et les objets du quotidien, tels que des télévisions et des bocaux, servent à illustrer l'enfermement émotionnel du personnage. La palette de couleurs est sombre, avec des teintes métalliques et des éclats de lumière froide, créant une ambiance claustrophobe et introspective. Chaque élément du décor est pensé pour renforcer le sentiment de captivité, tandis que les textures et les reflets des surfaces accentuent l'idée d'isolement émotionnel.",
         "miniature": "medias/miniature_projet_1.webp",
-        "description_courte": "Un court-métrage en mosaïque explorant l'isolement social et mental."
+        "description_courte": "Une vidéo en mosaïque explorant l'isolement social et mental."
     },
     {
         "id": 2,
@@ -47,7 +37,7 @@
         "coequipiers": [],
         "role": "Designer.",
         "description": {
-            "synopsis": "Jack (40 ans) détective privé, déjeune dans sa cuisine. Il écoute la télé. Le journaliste indique que le tueur qui tient en haleine toute la police de Berlin vient de poignarder sa 9ème victime. L'Inconnu annonce que sa prochaine victime sera tuée dans 10 heures. Jack sera-t-il capable de résoudre ce mystère avant qu'il ne soit trop tard? Une folle course contre la montre est lancée dans les rues de Berlin."
+            "synopsis": "Jack (40 ans) détective privé, déjeune dans sa cuisine. Il écoute la télé. Le journaliste indique que le tueur qui tient en haleine toute la police de Berlin vient de poignarder sa 9ème victime. L'Inconnu annonce que sa prochaine victime sera tuée dans 10 heures. Jack sera-t-il capable de résoudre ce mystère avant qu'il ne soit trop tard? Une folle course contre la montre est lancée dans les rues de Berlin." 
         },
         "demande_professeur_seul": "Elle nous a demandé de créer un trailer photo pour une fausse série policière inventée. Le projet devait comporter 12 images présentant les acteurs et les collaborateurs de la série.",
         "ma_realisation": "J'ai réalisé un trailer photo pour une fausse série policière avec 12 images présentant les acteurs et les collaborateurs. Mon trailer, L'Inconnu de Berlin, raconte l'histoire d'un détective privé de 40 ans qui doit arrêter un tueur en série à Berlin avant son prochain meurtre annoncé.",
@@ -59,24 +49,15 @@
     {
         "id": 3,
         "titre": "Sous le poids du papier",
-        "categorie": "Court-Métrage",
+        "categorie": "Vidéo",
         "video": "https://youtu.be/-Z6a_1mUTyQ?si=7KOO4LowGQYPS9SN",
         "mention": "Académique",
         "cours": "582-214-MO Animation 2D et 582-212-MO Vidéo 1",
         "type_projet": "Équipe",
         "coequipiers": [
-            {
-                "nom": "Ryan Dufault",
-                "photo": "medias/Ryan Dufault.jpg"
-            },
-            {
-                "nom": "Yannick Chamberland",
-                "photo": "medias/Yannick Chamberland.jpg"
-            },
-            {
-                "nom": "Mohamed Ali Sadki",
-                "photo": "medias/Mohamed Ali Sadki.jpg"
-            }
+            "Ryan Dufault",
+            "Yannick Chamberland",
+            "Mohamed Ali Sadki"
         ],
         "role": "Animateur 2D, Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -91,29 +72,19 @@
         "logiciels3": "DaVinci Resolve",
         "utilisation3": "Pour la création du Montage vidéo, de l'étalonnage et de la conception sonore.",
         "miniature": "medias/miniature_projet_3.webp",
-        "description_courte": "Un court-métrage en stop motion illustrant le burnout."
+        "description_courte": "Une vidéo en stop motion illustrant le burnout."
     },
     {
         "id": 4,
         "titre": "La rupture",
-        "categorie": "Court-Métrage",
+        "categorie": "Vidéo",
         "video": "https://youtu.be/clNIjdpMSMc?si=EYerM4mxyOir55Pz",
         "mention": "Académique",
         "cours": "582-312-MO Vidéo 2",
         "type_projet": "Équipe",
         "coequipiers": [
-            {
-                "nom": "Ryan Dufault",
-                "photo": "medias/Ryan.webp"
-            },
-            {
-                "nom": "Yannick Chamberland",
-                "photo": "medias/Yannick.webp"
-            },
-            {
-                "nom": "Mohamed Ali Sadki",
-                "photo": "medias/Mohamed.png"
-            }
+            "Ryan Dufault",
+            "Yannick Chamberland"
         ],
         "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -125,7 +96,7 @@
         "logiciels1": "DaVinci Resolve",
         "utilisation1": "Pour la création du Montage vidéo, de l'étalonnage et de la conception sonore.",
         "miniature": "medias/miniature_projet_4.webp",
-        "description_courte": "Un court-métrage en macro observant la tristesse et la colère."
+        "description_courte": "Une vidéo en macro observant la tristesse et la colère."
     },
     {
         "id": 5,

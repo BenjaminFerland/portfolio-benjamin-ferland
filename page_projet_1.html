@@ -64,33 +64,39 @@
         </div>
 
         <!-- Informations principales -->
-        <section class="mb-5" v-if="projetCourant">
+        <section class="mb-5">
             <h2>Informations du projet</h2>
+            <div v-for="projet in projets">
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Nom du projet :</strong><br />{{ projet.titre }}
+                </p>
 
-            <p><strong>Nom du projet :</strong><br />{{ projetCourant.titre }}</p>
-            <p><strong>Mention :</strong><br />{{ projetCourant.mention }}</p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Mention :</strong><br />{{ projet.mention }}
+                </p>
 
-            <p v-if="!['Vidéo personnel'].includes(projetCourant.categorie)">
-                <strong>Cours :</strong><br />{{ projetCourant.cours }}
-            </p>
+                <p v-if="[1, 3, 4].includes(projet.id) && projet.id == idprojetcourant">
+                    <strong>Cours :</strong><br />{{ projet.cours }}
+                </p>
 
-            <p><strong>Type de projet :</strong><br />{{ projetCourant.type_projet }}</p>
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Type de projet :</strong><br />{{ projet.type_projet }}
+                </p>
 
-            <p><strong>Catégorie :</strong><br />{{ projetCourant.categorie }}</p>
+                <p v-if="[1, 3, 4].includes(projet.id) && projet.id == idprojetcourant">
+                    <strong>Coéquipiers :
+                        https://www.linkedin.com/in/yannick-chamberland/
+                        https://www.linkedin.com/in/ryandufault/
+                    </strong><br />{{ projet.coequipiers.join(', ') }}
+                </p>
 
-            <section class="mb-5">
-                <h2>Coéquipiers</h2>
-                <div class="coequipiers-container">
-                    <div class="coequipier" data-photo="medias/Ryan.webp">Ryan Dufault</div>
-                    <div class="coequipier" data-photo="medias/Yannick.webp">Yannick Chamberland</div>
-                    <div class="coequipier" data-photo="medias/Mohamed3.webp">Mohamed Ali Sadki</div>
-                </div>
-                <div class="photo-container"></div>
-            </section>
-
-
+                <p v-if="projet.id == idprojetcourant">
+                    <strong>Catégorie :</strong><br />{{ projet.categorie }}
+                </p>
+            </div>
         </section>
 
+        <!-- Description longue -->
         <section class="mb-4" v-if="projetCourant">
             <h2>Description du projet</h2>
 
