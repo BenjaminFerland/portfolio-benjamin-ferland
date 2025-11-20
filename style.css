@@ -279,6 +279,58 @@ img.projets-image:hover {
     max-width: 100%;
 }
 
+
+.coequipiers-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.coequipier {
+    position: relative;
+    padding: 1rem 2rem;
+    font-family: var(--font-zain-light);
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--color-black);
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.coequipier:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Photo container */
+.photo-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+.photo-container h2 {
+    font-size: 15rem;
+}
+
+/* Affichage de l'image au hover en CSS pur via nth-child */
+.coequipier:nth-child(1):hover~.photo-container {
+    background-image: url('medias/Ryan.webp');
+}
+
+.coequipier:nth-child(2):hover~.photo-container {
+    background-image: url('medias/Yannick.webp');
+}
+
+.coequipier:nth-child(3):hover~.photo-container {
+    background-image: url('medias/Mohamed3.webp');
+}
+
+
 .logiciels {
     text-align: left;
 }

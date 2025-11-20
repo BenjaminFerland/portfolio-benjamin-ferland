@@ -52,81 +52,66 @@
                     {{ projet.titre }}
                 </h1>
             </div>
-            <p class="text-muted">Projet académique — Cours 582-312-MO Vidéo 2</p>
         </header>
 
         <!-- Vidéo principale -->
         <div class="mb-5" v-for="projet in projets" :key="projet.id">
-            <iframe
-              v-if="projet.id == idprojetcourant"
-              width="100%"
-              height="640"
-              :src="projet.video.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0]"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
+            <iframe v-if="projet.id == idprojetcourant" width="100%" height="640"
+                :src="projet.video.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0]" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
             </iframe>
-          </div>
+        </div>
 
         <!-- Informations principales -->
-        <section class="mb-5">
+        <section class="mb-5" v-if="projetCourant">
             <h2>Informations du projet</h2>
-            <div v-for="projet in projets">
-                <p v-if="projet.id == idprojetcourant">
-                    <strong>Nom du projet :</strong><br />{{ projet.titre }}
-                </p>
 
-                <p v-if="projet.id == idprojetcourant">
-                    <strong>Mention :</strong><br />{{ projet.mention }}
-                </p>
+            <p><strong>Nom du projet :</strong><br />{{ projetCourant.titre }}</p>
+            <p><strong>Mention :</strong><br />{{ projetCourant.mention }}</p>
 
-                <p v-if="projet.id == idprojetcourant">
-                    <strong>Cours :</strong><br />{{ projet.cours }}
-                </p>
+            <p v-if="!['Vidéo personnel'].includes(projetCourant.categorie)">
+                <strong>Cours :</strong><br />{{ projetCourant.cours }}
+            </p>
 
-                <p v-if="projet.id == idprojetcourant">
-                    <strong>Type de projet :</strong><br />{{ projet.type_projet }}
-                </p>
+            <p><strong>Type de projet :</strong><br />{{ projetCourant.type_projet }}</p>
 
-                <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
-                    <strong>Coéquipiers :</strong><br />{{ projet.coequipiers.join(', ')
-                    }}
-                </p>
+            <p><strong>Catégorie :</strong><br />{{ projetCourant.categorie }}</p>
 
-                <p v-if="projet.id == idprojetcourant">
-                    <strong>Catégorie :</strong><br />{{ projet.categorie }}
-                </p>
-            </div>
+            <section class="mb-5">
+                <h2>Coéquipiers</h2>
+                <div class="coequipiers-container">
+                    <div class="coequipier" data-photo="medias/Ryan.webp">Ryan Dufault</div>
+                    <div class="coequipier" data-photo="medias/Yannick.webp">Yannick Chamberland</div>
+                    <div class="coequipier" data-photo="medias/Mohamed3.webp">Mohamed Ali Sadki</div>
+                </div>
+                <div class="photo-container"></div>
+            </section>
+
+
         </section>
 
-        <!-- Description longue -->
-        <section class="mb-4">
+        <section class="mb-4" v-if="projetCourant">
             <h2>Description du projet</h2>
-            <div v-for="projet in projets">
-                <p v-if="projet.id==idprojetcourant">
-                    <strong>Voici le synopsis du projet :</strong><br />{{
-                    projet.description.synopsis }}
-                </p>
 
-                <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
-                    <strong>Ce que le professeur nous a demandé :</strong><br />{{
-                    projet.description.demande_professeur }}
-                </p>
+            <p><strong>Synopsis :</strong><br />{{ projetCourant.description.synopsis }}</p>
 
-                <p v-if="projet.id == idprojetcourant && idprojetcourant != 2">
-                    <strong>Ce que nous avons réalisé :</strong><br />{{
-                    projet.description.notre_realisation }}
-                </p>
-
-                <p v-if="projet.id == idprojetcourant && ![1, 3, 4].includes(idprojetcourant)">
-                    <strong>Ce que le professeur m'a demandé :</strong><br />{{ projet.demande_professeur_seul }}
+            <p v-if="projetCourant.categorie === 'Court-Métrage'">
+                <strong>Ce que le professeur nous a demandé :</strong><br />{{
+                projetCourant.description.demande_professeur }}
             </p>
-            <p v-if="projet.id == idprojetcourant && ![1, 3, 4].includes(idprojetcourant)">
-                <strong>Ce que j'ai réalisé :</strong><br />{{ projet.ma_realisation }}
+            <p v-if="projetCourant.categorie === 'Court-Métrage'">
+                <strong>Ce que nous avons réalisé :</strong><br />{{ projetCourant.description.notre_realisation }}
             </p>
 
-        </div>
-    </section>
+            <p v-if="projetCourant.categorie === 'Design'">
+                <strong>Ce que le professeur m'a demandé :</strong><br />{{ projetCourant.demande_professeur_seul }}
+            </p>
+            <p v-if="projetCourant.categorie === 'Design'">
+                <strong>Ce que j'ai réalisé :</strong><br />{{ projetCourant.ma_realisation }}
+            </p>
+
+        </section>
 
         <!-- Rôles -->
         <section class="mb-4">
@@ -268,13 +253,15 @@
     <footer id="contact" class="text-center py-4 bg-dark text-white">
         <h2>Me Contacter</h2>
         <p>
-          514-247-6971<br />
-          <a href="mailto:bferland.contact@gmail.com">bferland.contact@gmail.com</a>
+            514-247-6971<br />
+            <a href="mailto:bferland.contact@gmail.com">bferland.contact@gmail.com</a>
         </p>
-        <a href="https://www.linkedin.com/in/benjamin-ferland" target="_blank"> <!-- target="_blank: le lien s'ouvre dans un nouvel onglet -->
-        <p>LinkedIn</p></a>
+        <a href="https://www.linkedin.com/in/benjamin-ferland" target="_blank">
+            <!-- target="_blank: le lien s'ouvre dans un nouvel onglet -->
+            <p>LinkedIn</p>
+        </a>
         <p class="mt-3">©Benjamin Ferland 2025</p>
-      </footer>
+    </footer>
 
     <!-- ===================== SCRIPTS ===================== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

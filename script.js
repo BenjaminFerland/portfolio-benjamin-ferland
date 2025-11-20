@@ -1,48 +1,69 @@
 const app = Vue.createApp({
   data() {
     return {
-      projets: [], // Contient les données des projets chargées depuis projets.json
-      selectedCategory: "Tous", // Catégorie choisie
+      projets: [],
+      selectedCategory: "Tous",
+      idprojetcourant: null,
+      selectedCoequipier: null // <-- nouveau : coéquipier sélectionné
     };
   },
-
-  methods: {
-    // change la catégorie selon le bouton cliqué
-    filtrerCategorie(categorie) { // Fonction qui filtre les projets de la catégorie choisie
-      this.selectedCategory = categorie; //Affiche seulement les projets de la catégorie sélectionnée
+  computed: {
+    projetCourant() {
+      return this.projets.find(p => p.id === this.idprojetcourant) || null;
     }
   },
-
-
-  mounted() {
-
-    /*au chargement de la page, va récupérer le paramètre d'url nommé projet. stock le this.idprojetcourant */
-
-    // Récupère les paramètres de l'URL
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Cherche le paramètre nommé "projet"
-    const paramProjet = urlParams.get("projet");
-
-    // Si "projet" existe dans l'URL, on met à jour idprojetcourant
-    if (paramProjet !== null) {
-      this.idprojetcourant = parseInt(paramProjet);
+  methods: {
+    filtrerCategorie(categorie) {
+      this.selectedCategory = categorie;
+    },
+    selectCoequipier(coequipier) {
+      this.selectedCoequipier = coequipier;
+      const photoContainer = document.querySelector('.photo-container');
+      if (photoContainer) {
+        photoContainer.style.backgroundImage = `url(${coequipier.dataset.photo})`;
+      }
     }
+  },
+  mounted() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramProjet = urlParams.get("projet");
+    if (paramProjet !== null) this.idprojetcourant = parseInt(paramProjet);
 
-    console.log("ID projet courant :", this.idprojetcourant);
+    fetch('./projects.json')
+      .then(data => data.json())
+      .then(data => { 
+        this.projets = data; 
 
+        this.$nextTick(() => {
+          const coequipiers = document.querySelectorAll('.coequipier');
+          const photoContainer = document.querySelector('.photo-container');
 
-    fetch('./projects.json') // Va chercher les infos des projets dans le fichier projects.json
-      .then(data => data.json()) //on transforme les données en JSON 
-      .then(data => { // Quand c’est en json, on récupère les données dans le "data"
-        this.projets = data; // Stocke les projets dans le tableau Vue
-        console.log("Projets chargés :", this.projets);
+          coequipiers.forEach(co => {
+            // Affiche au hover
+            co.addEventListener('mouseenter', () => {
+              photoContainer.style.backgroundImage = `url(${co.dataset.photo})`;
+            });
+
+            // Revenir à l'image du coéquipier sélectionné quand on quitte
+            co.addEventListener('mouseleave', () => {
+              if (this.selectedCoequipier) {
+                photoContainer.style.backgroundImage = `url(${this.selectedCoequipier.dataset.photo})`;
+              } else {
+                photoContainer.style.backgroundImage = '';
+              }
+            });
+
+            // Affiche et sélectionne au clic
+            co.addEventListener('click', () => {
+              this.selectCoequipier(co);
+            });
+          });
+        });
       });
   }
 });
 
-app.mount('#projets'); // Attache l'App Vue à l'élément HTML avec l'id #projet
-
+app.mount('#projets');
 
 // Crée le swiper compétences
 const competencesSwiper = new Swiper('.competences-swiper', {
