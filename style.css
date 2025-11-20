@@ -119,7 +119,8 @@ header {
 
 /* === SECTION FILTRES PROJETS === */
 #filtres button {
-    padding: 12px 30px;
+    /* padding: 12px 30px; */
+    padding: 0.5vw 1vw;
     /* augmente la taille */
     font-size: 1.5rem;
     margin-right: 10px;
@@ -458,6 +459,7 @@ img.projets-image:hover {
     /* === SECTION FILTRES PROJETS === */
     #filtres button {
         padding: 5px 10px;
+        margin: 5px;
         /* augmente la taille */
         margin-right: 5px;
         /* espace entre les cases de filtres */
