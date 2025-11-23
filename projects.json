@@ -8,8 +8,14 @@
         "cours": "582-312-MO Vidéo 2",
         "type_projet": "Équipe",
         "coequipiers": [
-            "Ryan Dufault",
-            "Yannick Chamberland"
+            {
+                "nom": "Ryan Dufault",
+                "linkedin": "https://www.linkedin.com/in/ryandufault/"
+            },
+            {
+                "nom": "Yannick Chamberland",
+                "linkedin": "https://www.linkedin.com/in/yannick-chamberland/"
+            }
         ],
         "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -23,8 +29,8 @@
         "utilisation2": "Pour la création du montage vidéo, de la conception sonore et le compositing.",
         "direction_photo": "Lumières faibles et tamisées pour renforcer l'ambiance sombre. Utilisation de lampes et de lightpanels pour créer des zones d'ombre. Travellings doux et variations de profondeur de champ pour souligner les symboles (télévisions, bocaux). Les ralentis accentuent la stagnation du temps et l'isolement du protagoniste.",
         "direction_artistique": "La direction artistique de notre métrage se distingue par l'utilisation de décors symboliques et oppressants, où les espaces restreints et les objets du quotidien, tels que des télévisions et des bocaux, servent à illustrer l'enfermement émotionnel du personnage. La palette de couleurs est sombre, avec des teintes métalliques et des éclats de lumière froide, créant une ambiance claustrophobe et introspective. Chaque élément du décor est pensé pour renforcer le sentiment de captivité, tandis que les textures et les reflets des surfaces accentuent l'idée d'isolement émotionnel.",
-        "miniature": "medias/miniature_projet_1.webp",
-        "description_courte": "Une vidéo en mosaïque explorant l'isolement social et mental."
+        "miniature": "medias/miniature_projet_1+texture.webp",
+        "description_courte": "Un court-métrage en mosaïque explorant l'isolement social et mental."
     },
     {
         "id": 2,
@@ -43,7 +49,7 @@
         "ma_realisation": "J'ai réalisé un trailer photo pour une fausse série policière avec 12 images présentant les acteurs et les collaborateurs. Mon trailer, L'Inconnu de Berlin, raconte l'histoire d'un détective privé de 40 ans qui doit arrêter un tueur en série à Berlin avant son prochain meurtre annoncé.",
         "logiciels1": "Photoshop",
         "utilisation1": "Pour la création du moodboard, des images, des retouches photos et la composition du trailer.",
-        "miniature": "medias/miniature_projet_2.webp",
+        "miniature": "medias/miniature_projet_2+texture.webp",
         "description_courte": "Un trailer photo présentant une fausse série policière."
     },
     {
@@ -55,9 +61,17 @@
         "cours": "582-214-MO Animation 2D et 582-212-MO Vidéo 1",
         "type_projet": "Équipe",
         "coequipiers": [
-            "Ryan Dufault",
-            "Yannick Chamberland",
-            "Mohamed Ali Sadki"
+            {
+                "nom": "Ryan Dufault",
+                "linkedin": "https://www.linkedin.com/in/ryandufault/"
+            },
+            {
+                "nom": "Yannick Chamberland",
+                "linkedin": "https://www.linkedin.com/in/yannick-chamberland/"
+            },
+            {
+                "nom": "Mohamed Ali Sadki"
+            }
         ],
         "role": "Animateur 2D, Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -71,8 +85,8 @@
         "utilisation2": "Pour la création des animations des séquences en 2D.",
         "logiciels3": "DaVinci Resolve",
         "utilisation3": "Pour la création du Montage vidéo, de l'étalonnage et de la conception sonore.",
-        "miniature": "medias/miniature_projet_3.webp",
-        "description_courte": "Une vidéo en stop motion illustrant le burnout."
+        "miniature": "medias/miniature_projet_3+texture.webp",
+        "description_courte": "Un court-métrage en stop motion illustrant le burnout."
     },
     {
         "id": 4,
@@ -83,8 +97,14 @@
         "cours": "582-312-MO Vidéo 2",
         "type_projet": "Équipe",
         "coequipiers": [
-            "Ryan Dufault",
-            "Yannick Chamberland"
+            {
+                "nom": "Ryan Dufault",
+                "linkedin": "https://www.linkedin.com/in/ryandufault/"
+            },
+            {
+                "nom": "Yannick Chamberland",
+                "linkedin": "https://www.linkedin.com/in/yannick-chamberland/"
+            }
         ],
         "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
@@ -95,8 +115,8 @@
         "synopsis": "Marc, un trentenaire en apparence ordinaire, cache une douleur intérieure qui le dévore : après une rupture, sa tristesse se transforme peu à peu en colère et en obsession.",
         "logiciels1": "DaVinci Resolve",
         "utilisation1": "Pour la création du Montage vidéo, de l'étalonnage et de la conception sonore.",
-        "miniature": "medias/miniature_projet_4.webp",
-        "description_courte": "Une vidéo en macro observant la tristesse et la colère."
+        "miniature": "medias/miniature_projet_4+texture.webp",
+        "description_courte": "Un court-métrage en macro observant la tristesse et la colère."
     },
     {
         "id": 5,
@@ -114,7 +134,7 @@
         "utilisation1": "Montage vidéo, étalonnage et conception sonore.",
         "logiciels2": "After Effects",
         "utilisation2": "Création du masque noir sur le corps dans les premières scènes.",
-        "miniature": "medias/miniature_projet_5.webp",
+        "miniature": "medias/miniature_projet_5+texture.webp",
         "description_courte": "Une courte vidéo qui présente ma routine du matin."
     }
 ]

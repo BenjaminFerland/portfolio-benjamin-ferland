@@ -139,9 +139,22 @@ header {
     display: block;
 }
 
+img.projets-image {
+    transition: transform 0.4s cubic-bezier(.25, .8, .25, 1),
+        filter 0.4s ease;
+    transform-origin: center;
+}
+
+/* Effet au hover : l’image se déplie et s’illumine */
 img.projets-image:hover {
-    transform: scale(1.05);
-    /* Augmente un peu la grosseur de l'image au survol */
+    transform: rotateX(10deg) rotateY(-6deg) scale(1.08);
+    filter: brightness(1.2);
+}
+
+/* Effet au click : l’image se déplie et s’illumine */
+img.projets-image:active {
+    transform: rotateX(10deg) rotateY(-6deg) scale(1.08);
+    filter: brightness(1.2);
 }
 
 /* === BOUTON PROJET AVEC EFFET HOLOGRAPHIQUE === */
