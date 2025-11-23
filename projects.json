@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titre": "La pilule de trop",
-        "categorie": "Vidéo",
+        "categorie": "Court-Métrage",
         "video": "https://youtu.be/qf2fKAnWzsM?si=0aAoABYFdY96bNKj",
         "mention": "Académique",
         "cours": "582-312-MO Vidéo 2",
@@ -37,7 +37,7 @@
         "coequipiers": [],
         "role": "Designer.",
         "description": {
-            "synopsis": "Jack (40 ans) détective privé, déjeune dans sa cuisine. Il écoute la télé. Le journaliste indique que le tueur qui tient en haleine toute la police de Berlin vient de poignarder sa 9ème victime. L'Inconnu annonce que sa prochaine victime sera tuée dans 10 heures. Jack sera-t-il capable de résoudre ce mystère avant qu'il ne soit trop tard? Une folle course contre la montre est lancée dans les rues de Berlin." 
+            "synopsis": "Jack (40 ans) détective privé, déjeune dans sa cuisine. Il écoute la télé. Le journaliste indique que le tueur qui tient en haleine toute la police de Berlin vient de poignarder sa 9ème victime. L'Inconnu annonce que sa prochaine victime sera tuée dans 10 heures. Jack sera-t-il capable de résoudre ce mystère avant qu'il ne soit trop tard? Une folle course contre la montre est lancée dans les rues de Berlin."
         },
         "demande_professeur_seul": "Elle nous a demandé de créer un trailer photo pour une fausse série policière inventée. Le projet devait comporter 12 images présentant les acteurs et les collaborateurs de la série.",
         "ma_realisation": "J'ai réalisé un trailer photo pour une fausse série policière avec 12 images présentant les acteurs et les collaborateurs. Mon trailer, L'Inconnu de Berlin, raconte l'histoire d'un détective privé de 40 ans qui doit arrêter un tueur en série à Berlin avant son prochain meurtre annoncé.",
@@ -49,7 +49,7 @@
     {
         "id": 3,
         "titre": "Sous le poids du papier",
-        "categorie": "Vidéo",
+        "categorie": "Court-Métrage",
         "video": "https://youtu.be/-Z6a_1mUTyQ?si=7KOO4LowGQYPS9SN",
         "mention": "Académique",
         "cours": "582-214-MO Animation 2D et 582-212-MO Vidéo 1",
@@ -77,7 +77,7 @@
     {
         "id": 4,
         "titre": "La rupture",
-        "categorie": "Vidéo",
+        "categorie": "Court-Métrage",
         "video": "https://youtu.be/clNIjdpMSMc?si=EYerM4mxyOir55Pz",
         "mention": "Académique",
         "cours": "582-312-MO Vidéo 2",
