@@ -11,8 +11,17 @@ const app = Vue.createApp({
     return {
       projets: [], // Contient les données des projets chargées depuis projects.json
       selectedCategory: "Tous", // Catégorie choisie
+      idprojetcourant: null,
     };
   },
+
+  computed: {
+    // ← ajoute tout ce bloc
+    projetCourant() {
+      return this.projets.find(p => p.id === this.idprojetcourant) || null;
+    }
+  },
+
 
   methods: {
     // change la catégorie selon le bouton cliqué

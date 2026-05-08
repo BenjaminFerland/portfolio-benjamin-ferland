@@ -119,11 +119,11 @@
     },
     {
         "id": 6,
-        "titre_compagnie_Peephole": "Informations sur la compagnie Peephole ",
-        "description_compagnie_Peephole": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
-        "titre_stage_Peephole": "Informations concernant mon stage chez Peephole ",
-        "description_stage_Peephole": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. J'ai aussi utilisé une vraie araignée pour le tournage de cette première publicité. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
-        "en_savoir_plus_Peephole": "Visitez le site web de Peephole pour en savoir d'avantage : ",
+        "titre_compagnie": "Informations sur la compagnie Peephole ",
+        "description_compagnie": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
+        "titre_stage": "Informations concernant mon stage chez Peephole ",
+        "description_stage": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. J'ai aussi utilisé une vraie araignée pour le tournage de cette première publicité. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
+        "en_savoir_plus": "Visitez le site web de Peephole pour en savoir d'avantage : ",
         "titre": "Première publicité de Peephole",
         "categorie": "Stage Location Peephole",
         "video": "https://youtu.be/SdadvGS-iGM?si=XogH_3wbU9zTHnjx",
@@ -177,42 +177,55 @@
                         "legende": "Voici maintenant l'environnement du garage, qui est tout en désordre et rempli de poussière de bois."
                     }
                 ]
-            },
-            {
-                "titre": "Postproduction",
-                "description": "Montage vidéo, ajout du sound design et ajustement des couleurs.",
-                "images": [
-                    {
-                        "src": "Assets/Peephole/postproduction.jpg",
-                        "alt": "Montage vidéo",
-                        "legende": "Capture du processus de montage et des ajustements visuels."
-                    }
-                ]
             }
         ]
     },
     {
         "id": 7,
-        "titre_compagnie_Peephole": "Informations sur la compagnie Peephole ",
-        "description_compagnie_Peephole": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
-        "titre_stage_Peephole": "Informations concernant mon stage chez Peephole ",
-        "description_stage_Peephole": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. J'ai aussi utilisé une vraie araignée pour le tournage de cette première publicité. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
-        "en_savoir_plus_Peephole": "Visitez le site web de Peephole pour en savoir d'avantage : ",
+        "titre_compagnie": "Informations sur la compagnie Peephole ",
+        "description_compagnie": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
+        "titre_stage": "Informations concernant mon stage chez Peephole ",
+        "description_stage": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
+        "en_savoir_plus": "Visitez le site web de Peephole pour en savoir d'avantage : ",
         "titre": "Deuxième publicité de Peephole",
         "categorie": "Stage Location Peephole",
         "video": "https://youtu.be/bIU1lQyNZzY?si=21ABSdc7oOkDpJgB",
         "mention": "Stage Location Peephole",
         "type_projet": "Individuel",
         "coequipiers": [],
-        "role": "",
+        "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
-            "synopsis": ""
+            "synopsis": "Une courte publicité humoristique qui parodie un bulletin de nouvelles dramatique. On y voit un présentateur annoncer qu'un aspirateur a été abandonné pendant deux semaines, avant qu'un journaliste interviewe le propriétaire gêné de l'objet. La vidéo se termine avec une promotion de Peephole, qui permet de louer ses objets inutilisés pour faire de l'argent. La vidéo est en LOOP."
         },
         "logiciels1": "DaVinci Resolve",
-        "utilisation1": "",
+        "utilisation1": "Montage vidéo, étalonnage et conception sonore.",
         "logiciels2": "After Effects",
-        "utilisation2": "Création du masque qui est remplacer par des objets dont on peut louer avec Peephole sur les scènes dont on voit mon visage.",
+        "utilisation2": "Création du masque qui est remplacer par des objets dont on peut louer avec Peephole sur les scènes dont on voit mon visage. Aussi, Création des particules d'argents qui disparait avec le texte «l'argent»",
         "miniature": "medias/miniature_projet_7+texture.webp",
         "description_courte": "Une courte publicité qui présente un aspirateur laissé à l'abandon."
+    },
+    {
+        "id": 8,
+        "titre_compagnie": "Informations sur la compagnie Peephole ",
+        "description_compagnie": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
+        "titre_stage": "Informations concernant mon stage chez Peephole ",
+        "description_stage": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
+        "en_savoir_plus_Peephole": "Visitez le site web de Peephole pour en savoir d'avantage : ",
+        "titre": "Troisième publicité de Peephole",
+        "categorie": "Stage Location Peephole",
+        "video": "https://youtu.be/u_lrF8Mx5J8?si=2xXHvPaMOjkabT32",
+        "mention": "Stage Location Peephole",
+        "type_projet": "Individuel",
+        "coequipiers": [],
+        "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
+        "description": {
+            "synopsis": "Une courte publicité en boucle où une vieille Xbox One oubliée dans un garde-robe poussiéreux est redécouverte comme un objet presque sacré. La vidéo présente plusieurs plans cinématographiques et nostalgiques : un top down shot qui avance lentement vers le joueur, un plan rapproché où l'on voit seulement la console Xbox et la manette éclairée par les reflets de la télévision, ainsi qu'une notification de paiement qui apparaît, montrant qu'avec Peephole même le passé peut rapporter de l'argent.La vidéo est en LOOP."
+        },
+        "logiciels1": "DaVinci Resolve",
+        "utilisation1": "Montage vidéo, étalonnage et conception sonore.",
+        "logiciels2": "After Effects",
+        "utilisation2": "Création des particules d'argents qui disparait avec le texte «payer»",
+        "miniature": "medias/miniature_projet_8+texture.webp",
+        "description_courte": "Une courte publicité qui présente une vieille Xbox laissé à l'abandon."
     }
 ]

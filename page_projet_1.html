@@ -67,12 +67,12 @@
         <!-- Informations sur Peephole -->
         <section v-for="projet in projets" class="mb-5">
             <div v-if="[6, 7, 8].includes(projet.id) && projet.id == idprojetcourant">
-                <h2>{{projet.titre_compagnie_Peephole }} </h2>
+                <h2>{{projet.titre_compagnie }} </h2>
                 <p>
-                    <strong></strong><br />{{projet.description_compagnie_Peephole }}
+                    <strong></strong><br />{{projet.description_compagnie }}
                 </p>
                 <p>
-                    <strong></strong><br />{{ projet.en_savoir_plus_Peephole }} <a href="https://locationpeephole.ca/"
+                    <strong></strong><br />{{ projet.en_savoir_plus }} <a href="https://locationpeephole.ca/"
                         target="_blank">
                         https://locationpeephole.ca/
                     </a>
@@ -83,10 +83,11 @@
 
         <!-- Informations sur mon stage chez Peephole -->
         <section class="mb-5">
-            <h2>Informations concernant mon stage chez Peephole </h2>
             <div v-for="projet in projets">
+                <h2 v-if="[6, 7, 8].includes(projet.id) && projet.id == idprojetcourant">{{ projet.titre_stage
+                    }} </h2>
                 <p v-if="[6, 7, 8].includes(projet.id) && projet.id == idprojetcourant">
-                    <strong></strong><br />{{ projet.description_stage_Peephole }}
+                    <strong></strong><br />{{ projet.description_stage }}
                 </p>
             </div>
         </section>
