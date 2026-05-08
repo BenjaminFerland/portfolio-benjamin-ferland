@@ -63,6 +63,35 @@
             </iframe>
         </div>
 
+
+        <!-- Informations sur Peephole -->
+        <section v-for="projet in projets" class="mb-5">
+            <div v-if="[6, 7, 8].includes(projet.id) && projet.id == idprojetcourant">
+                <h2>{{projet.titre_compagnie_Peephole }} </h2>
+                <p>
+                    <strong></strong><br />{{projet.description_compagnie_Peephole }}
+                </p>
+                <p>
+                    <strong></strong><br />{{ projet.en_savoir_plus_Peephole }} <a href="https://locationpeephole.ca/"
+                        target="_blank">
+                        https://locationpeephole.ca/
+                    </a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Informations sur mon stage chez Peephole -->
+        <section class="mb-5">
+            <h2>Informations concernant mon stage chez Peephole </h2>
+            <div v-for="projet in projets">
+                <p v-if="[6, 7, 8].includes(projet.id) && projet.id == idprojetcourant">
+                    <strong></strong><br />{{ projet.description_stage_Peephole }}
+                </p>
+            </div>
+        </section>
+
+
         <!-- Informations principales -->
         <section class="mb-5">
             <h2>Informations du projet</h2>
@@ -96,6 +125,7 @@
                 </p>
             </div>
         </section>
+
 
         <!-- Description longue -->
         <section class="mb-4" v-if="projetCourant">
@@ -145,10 +175,35 @@
                     <strong></strong>{{ projet.utilisation3 }}
                 </p>
             </div>
-
-            <!-- <p><strong>DaVinci Resolve</strong><br> Pour la création du montage vidéo, de la conception sonore, et du
-                compositing</p> -->
         </section>
+
+
+        <!-- Étapes de production / Behind the scenes -->
+        <section class="mb-5">
+            <div v-for="projet in projets">
+                <div v-if="(projet.id == 6 || projet.id == 7 || projet.id == 8) && projet.id == idprojetcourant">
+                    <h2>Étapes de production</h2>
+                    <div class="mb-4 justify-content-center" v-for="step in projet.bts_steps" :key="step.titre">
+                        <h3>{{ step.titre }}</h3>
+                        <p>{{ step.description }}</p>
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 mb-3 justify-content-center" v-for="(img, index) in step.images"
+                                :key="index">
+                                <!-- Si c'est un PDF -->
+                                <iframe v-if="img.src.endsWith('.pdf')" :src="img.src" class="w-100 rounded"
+                                    style="height: 400px; border: none;" :title="img.alt">
+                                </iframe>
+                                <a v-if="img.src.endsWith('.pdf')" :href="img.src" target="_blank">Ouvrir le PDF</a>
+                                <!-- Sinon c'est une image -->
+                                <img v-else :src="img.src" class="img-fluid rounded" :alt="img.alt">
+                                <p>{{ img.legende }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- ===================== NOUVELLES SECTIONS ===================== -->
 

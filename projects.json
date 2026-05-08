@@ -119,26 +119,86 @@
     },
     {
         "id": 6,
-        "titre": "Première publicité",
-        "categorie": "Stage Ton consultant",
+        "titre_compagnie_Peephole": "Informations sur la compagnie Peephole ",
+        "description_compagnie_Peephole": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
+        "titre_stage_Peephole": "Informations concernant mon stage chez Peephole ",
+        "description_stage_Peephole": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. J'ai aussi utilisé une vraie araignée pour le tournage de cette première publicité. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
+        "en_savoir_plus_Peephole": "Visitez le site web de Peephole pour en savoir d'avantage : ",
+        "titre": "Première publicité de Peephole",
+        "categorie": "Stage chez Location Peephole",
         "video": "https://youtu.be/SdadvGS-iGM?si=XogH_3wbU9zTHnjx",
-        "mention": "Stage Ton consultant",
+        "mention": "Personnel",
         "type_projet": "Individuel",
         "coequipiers": [],
-        "role": "",
+        "role": "Concepteur Sonore, Réalisateur, Monteur Vidéo et Vidéaste.",
         "description": {
-            "synopsis": ""
+            "synopsis": "Une courte publicité où l'on voit une drill oubliée dans un garage, puis reprise en main et utilisée dans un atelier. La vidéo présente plusieurs plans et ambiances différentes : la poussière s'accumule, une vraie araignée apparaît dans le garage, la lumière change, quelqu'un utilise la drill, les copeaux de bois envahisent le garage, etc."
         },
-        "logiciels1": "DaVinci Resolve",
-        "utilisation1": "",
-        "logiciels2": "After Effects",
-        "utilisation2": "",
+        "logiciels1": "Figma",
+        "utilisation1": "Pour la création du scénarimage.",
+        "logiciels2": "DaVinci Resolve",
+        "utilisation2": "Montage vidéo, étalonnage et conception sonore.",
         "miniature": "medias/miniature_projet_6+texture.webp",
-        "description_courte": ""
+        "description_courte": "Une courte publicité qui présente une drill laissée dans un garage abandonné.",
+        "bts_steps": [
+            {
+                "titre": "Préproduction",
+                "description": "Recherche d'idées, création du scénario et du Scénarimage.",
+                "images": [
+                    {
+                        "src": "medias/scénarimage.png",
+                        "alt": "Scénarimage du projet",
+                        "legende": "Photo du scénarimage de la publicité."
+                    },
+                    {
+                        "src": "medias/scénario.pdf",
+                        "alt": "scénario du projet",
+                        "legende": "PDF du scénario de la publicité."
+                    }
+                ]
+            },
+            {
+                "titre": "Production",
+                "description": "Tournage des différentes scènes avec éclairage pratique et effets visuels.",
+                "images": [
+                    {
+                        "src": "medias/production_1.jpg",
+                        "alt": "photo tournage_1",
+                        "legende": "J'ai utilisé des chaises, du bois et une couverture, ce qui m'a permis de réduire la lumière provenant de la fenêtre."
+                    },
+                    {
+                        "src": "medias/production_2.jpg",
+                        "alt": "photo tournage_2",
+                        "legende": "J'ai décidé de recréer un environnement de garage dans mon sous-sol, ce qui me permettait de mieux contrôler mon éclairage et mon espace de tournage."
+                    },
+                    {
+                        "src": "medias/production_3.jpg",
+                        "alt": "photo tournage_3",
+                        "legende": "Voici maintenant l'environnement du garage, qui est tout en désordre et rempli de poussière de bois."
+                    }
+                ]
+            },
+            {
+                "titre": "Postproduction",
+                "description": "Montage vidéo, ajout du sound design et ajustement des couleurs.",
+                "images": [
+                    {
+                        "src": "Assets/Peephole/postproduction.jpg",
+                        "alt": "Montage vidéo",
+                        "legende": "Capture du processus de montage et des ajustements visuels."
+                    }
+                ]
+            }
+        ]
     },
     {
-        "id": 6,
-        "titre": "Deuxième publicité",
+        "id": 7,
+        "titre_compagnie_Peephole": "Informations sur la compagnie Peephole ",
+        "description_compagnie_Peephole": "Peephole est une application de location entre particuliers qui permet de louer ou mettre en location toutes sortes d'objets près de chez soi, comme des outils, des équipements ou des véhicules. La plateforme veut rendre la location plus accessible, aider les gens à faire de l'argent avec leurs biens et réduire la surconsommation grâce au partage local.",
+        "titre_stage_Peephole": "Informations concernant mon stage chez Peephole ",
+        "description_stage_Peephole": "J'ai adoré mon stage de 1 mois chez Peephole. Mon mandat était de trouver de nouvelles idées et de nouvelles stratégies publicitaires. Je devais créer des publicités de 15 à 20 secondes qui incitaient les gens à mettre des objets à louer sur l'application mobile Peephole. Je créais les publicités de A à Z moi-même. Je trouvais l'idée, puis je faisais un scénario et un storyboard. Ensuite, je faisais le tournage, le montage et la publication. J'avais une énorme liberté créative durant ce stage. Je testais plein de choses pendant les tournages en essayant de nouveaux angles de vue et de nouvelles techniques de montage que j'ai apprises à l'aide de tutoriels YouTube. J'ai aussi utilisé une vraie araignée pour le tournage de cette première publicité. Mon employeur me faisait 100 % confiance. Il adorait ma créativité exceptionnelle.",
+        "en_savoir_plus_Peephole": "Visitez le site web de Peephole pour en savoir d'avantage : ",
+        "titre": "Deuxième publicité de Peephole",
         "categorie": "Stage Ton consultant",
         "video": "https://youtu.be/bIU1lQyNZzY?si=21ABSdc7oOkDpJgB",
         "mention": "Stage Ton consultant",
@@ -152,7 +212,7 @@
         "utilisation1": "",
         "logiciels2": "After Effects",
         "utilisation2": "Création du masque qui est remplacer par des objets dont on peut louer avec Peephole sur les scènes dont on voit mon visage.",
-        "miniature": "medias/miniature_projet_6+texture.webp",
-        "description_courte": ""
+        "miniature": "medias/miniature_projet_7+texture.webp",
+        "description_courte": "Une courte publicité qui présente un aspirateur laissé à l'abandon."
     }
 ]
