@@ -4,23 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard — Analytics Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
-    rel="stylesheet">
+  <title>Dashboard — Analytics Portfolio Benjamin</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="medias/logo/logo_portfolio.png" sizes="64x64" />
+
   <style>
+    /* === FONTS (mêmes que le portfolio) === */
+    @font-face {
+      font-family: 'Zain-Light';
+      src: url('fonts/zain/Zain-Light.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Zai-TornPaper';
+      src: url('fonts/zai_TornPaper/zai_TornPaper.ttf') format('truetype');
+    }
+
+    /* === VARIABLES (mêmes que style.css) === */
     :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --surface2: #1a1a1a;
-      --border: #2a2a2a;
-      --accent: #c8ff00;
-      --accent2: #ff6b35;
-      --text: #e8e8e8;
-      --muted: #666;
-      --font-mono: 'Space Mono', monospace;
-      --font-sans: 'Syne', sans-serif;
+      --font-body: 'Zain-Light', sans-serif;
+      --font-title: 'Zai-TornPaper', serif;
+      --color-white: #EFF3FB;
+      --color-black: #000000;
+      --color-beige: #DFDAD5;
+      --color-accent: #c8ff00;
+      --color-accent2: #ff6b35;
+      --color-muted: rgba(0, 0, 0, 0.5);
+      --surface: rgba(239, 243, 251, 0.82);
+      --surface2: rgba(223, 218, 213, 0.7);
+      --border: rgba(0, 0, 0, 0.15);
     }
 
     * {
@@ -30,90 +43,114 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      min-height: 100vh;
+      font-family: var(--font-zain-light);
+      background: url("medias/background_desktop.webp") no-repeat center/cover fixed;
+      color: var(--color-black);
+      margin: 0;
     }
 
-    /* ── LOGIN ── */
+    /* ── VIEWER BADGE (bandeau en haut quand mode viewer) ── */
+    #viewer-banner {
+      display: none;
+      background: rgba(255, 107, 53, 0.12);
+      border-bottom: 2px solid var(--color-accent2);
+      padding: 0.6rem 2rem;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      color: var(--color-white);
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+
+    /* ── LOGIN SCREEN ── */
     #login-screen {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      gap: 1.5rem;
+      gap: 2rem;
+      padding: 2rem;
     }
 
     #login-screen h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-family: var(--font-title);
+      font-size: 6rem;
+      color: transparent;
+      -webkit-text-stroke: 3px var(--color-black);
+      text-align: center;
+      line-height: 1.1;
     }
 
-    #login-screen h1 span {
-      color: var(--accent);
+    #login-screen h1:hover {
+      color: var(--color-black);
     }
 
     .login-box {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      width: 340px;
+      gap: 1.2rem;
+      width: 360px;
+      max-width: 95vw;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     }
 
     .login-box label {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-family: var(--font-body);
+      font-size: 1.8rem;
+      color: var(--color-black);
     }
 
     .login-box input {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: var(--color-black);
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      padding: 0.7rem 1rem;
       width: 100%;
       outline: none;
       transition: border-color 0.2s;
     }
 
     .login-box input:focus {
-      border-color: var(--accent);
+      border-color: var(--color-black);
     }
 
     .btn-login {
-      background: var(--accent);
-      color: #000;
+      background-image: url('medias/bouton.png');
+      background-size: cover;
+      background-position: center;
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 1.8rem;
+      padding: 0.85rem 2rem;
       border: none;
-      border-radius: 8px;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.85rem;
+      border-radius: 10px;
       cursor: pointer;
-      transition: opacity 0.2s, transform 0.15s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-login:hover {
-      opacity: 0.85;
-      transform: translateY(-1px);
+      transform: scale(1.04);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
 
     .login-error {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent2);
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      color: var(--color-accent2);
       text-align: center;
       display: none;
     }
@@ -123,24 +160,34 @@
       display: none;
     }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2.5rem;
+    /* NAVBAR style portfolio */
+    nav.dash-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 1rem;
+      padding: 0.5rem 2rem;
+      gap: 0.75rem;
+      background: rgba(239, 243, 251, 0.6);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
     }
 
-    header h1 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+    .dash-brand {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      color: var(--color-black);
+      text-decoration: none;
     }
 
-    header h1 span {
-      color: var(--accent);
+    .dash-brand:hover {
+      color: var(--color-white);
+    }
+
+    .dash-nav-title {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      color: var(--color-black);
     }
 
     .header-actions {
@@ -150,181 +197,184 @@
       flex-wrap: wrap;
     }
 
-    .badge-live {
-      background: rgba(200, 255, 0, 0.15);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-      padding: 0.3rem 0.7rem;
-      border-radius: 20px;
-      text-transform: uppercase;
-    }
-
+    /* Boutons d'action — style portfolio */
     .btn-action {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--color-black);
+      background: rgba(255, 255, 255, 0.4);
+      color: var(--color-black);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
     }
 
     .btn-action:hover {
-      border-color: var(--text);
-      color: var(--text);
+      background: var(--color-black);
+      color: var(--color-white);
+      transform: translateY(-1px);
+    }
+
+    /* Boutons désactivés pour le viewer */
+    .btn-action.viewer-disabled,
+    .btn-action.viewer-disabled:hover {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--color-muted);
+      border-color: var(--color-muted);
+    }
+
+    .btn-reset {
+      border-color: #cc2222;
+      color: #cc2222;
+    }
+
+    .btn-reset:hover {
+      background: #cc2222;
+      color: white;
     }
 
     .btn-owner {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: #1a7a1a;
+      color: #1a7a1a;
     }
 
     .btn-owner:hover,
     .btn-owner.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
-
-    .btn-reset {
-      border-color: #ff3333;
-      color: #ff3333;
-    }
-
-    .btn-reset:hover {
-      background: #ff3333;
-      color: #fff;
+      background: #1a7a1a;
+      color: white;
     }
 
     /* ── OWNER BANNER ── */
     #owner-banner {
       display: none;
-      background: rgba(200, 255, 0, 0.08);
-      border-bottom: 1px solid rgba(200, 255, 0, 0.3);
-      padding: 0.75rem 2.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--accent);
+      background: rgba(26, 122, 26, 0.12);
+      border-bottom: 2px solid #1a7a1a;
+      padding: 0.6rem 2rem;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      color: #1a7a1a;
       align-items: center;
-      gap: 0.75rem;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     #owner-banner.show {
       display: flex;
     }
 
+    /* ── MAIN CONTENT ── */
     .main {
       padding: 2.5rem;
       max-width: 1300px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
+    }
+
+    /* Titres de section style portfolio */
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: var(--color-black);
+      margin-bottom: 1.2rem;
+      -webkit-text-stroke: 1px var(--color-black);
     }
 
     /* ── STAT CARDS ── */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
     }
 
     .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 16px;
+      padding: 1.8rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
     }
 
-    .stat-card::before {
+    .stat-card::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
-      background: var(--accent);
+      height: 3px;
+      background: var(--color-black);
+      border-radius: 16px 16px 0 0;
     }
 
-    .stat-card.c2::before {
-      background: var(--accent2);
+    .stat-card.c2::after {
+      background: var(--color-accent2);
     }
 
-    .stat-card.c3::before {
+    .stat-card.c3::after {
       background: #a78bfa;
     }
 
-    .stat-card.c4::before {
+    .stat-card.c4::after {
       background: #60a5fa;
     }
 
     .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
     }
 
     .stat-value {
-      font-size: 3rem;
-      font-weight: 800;
+      font-family: var(--font-title);
+      font-size: 5rem;
       line-height: 1;
-      color: var(--accent);
+      color: var(--color-black);
     }
 
     .stat-card.c2 .stat-value {
-      color: var(--accent2);
+      color: var(--color-accent2);
     }
 
     .stat-card.c3 .stat-value {
-      color: #a78bfa;
+      color: #7c3aed;
     }
 
     .stat-card.c4 .stat-value {
-      color: #60a5fa;
+      color: #2563eb;
     }
 
     .stat-sub {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      color: var(--color-muted);
+      margin-top: 0.3rem;
     }
 
-    /* ── SECTION TITLE ── */
-    .section-title {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
 
     /* ── PAGE BARS ── */
     .page-bars {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .page-bar-row {
@@ -334,9 +384,9 @@
     }
 
     .page-bar-label {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      width: 180px;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      width: 200px;
       flex-shrink: 0;
       white-space: nowrap;
       overflow: hidden;
@@ -346,48 +396,49 @@
     .page-bar-track {
       flex: 1;
       background: var(--surface2);
-      border-radius: 4px;
-      height: 28px;
+      border-radius: 6px;
+      height: 32px;
       overflow: hidden;
     }
 
     .page-bar-fill {
       height: 100%;
-      background: var(--accent);
-      border-radius: 4px;
-      transition: width 0.8s cubic-bezier(.25, .8, .25, 1);
+      background: var(--color-black);
+      border-radius: 6px;
+      transition: width 0.9s cubic-bezier(.25, .8, .25, 1);
       display: flex;
       align-items: center;
-      padding-left: 0.75rem;
-      min-width: 36px;
+      padding-left: 0.85rem;
+      min-width: 40px;
     }
 
     .page-bar-count {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: #000;
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      color: var(--color-white);
       font-weight: 700;
     }
 
     /* ── SOURCE CARDS ── */
     .source-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 1rem;
     }
 
     .source-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
+      backdrop-filter: blur(4px);
     }
 
     .source-icon {
-      font-size: 1.8rem;
+      font-size: 2rem;
       flex-shrink: 0;
       width: 2.5rem;
       text-align: center;
@@ -398,23 +449,21 @@
     }
 
     .source-name {
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.1rem;
     }
 
     .source-count {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      color: var(--color-muted);
     }
 
     .source-pct {
-      font-family: var(--font-mono);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
+      font-family: var(--font-title);
+      font-size: 2rem;
       flex-shrink: 0;
     }
 
@@ -425,18 +474,12 @@
       gap: 1.5rem;
     }
 
-    .panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-
     /* ── DONUT ── */
     .donut-wrap {
       display: flex;
       align-items: center;
       gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .legend {
@@ -449,13 +492,13 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
     }
 
     .legend-dot {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       flex-shrink: 0;
     }
@@ -464,8 +507,9 @@
     .table-wrap {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: auto;
+      backdrop-filter: blur(6px);
     }
 
     table {
@@ -479,147 +523,143 @@
     }
 
     th {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      color: var(--color-muted);
+      padding: 1rem 1.2rem;
       text-align: left;
       white-space: nowrap;
     }
 
     td {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      padding: 0.85rem 1.2rem;
       border-top: 1px solid var(--border);
     }
 
     tr:hover td {
-      background: rgba(200, 255, 0, 0.03);
+      background: rgba(0, 0, 0, 0.03);
     }
 
+    /* Tags */
     .tag {
       display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.65rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
       font-weight: 700;
+      font-family: var(--font-body);
     }
 
     .tag-mobile {
       background: rgba(255, 107, 53, 0.15);
-      color: var(--accent2);
+      color: var(--color-accent2);
     }
 
     .tag-desktop {
       background: rgba(96, 165, 250, 0.15);
-      color: #60a5fa;
+      color: #2563eb;
     }
 
     .tag-linkedin {
-      background: rgba(10, 102, 194, 0.2);
-      color: #6ab4ff;
+      background: rgba(10, 102, 194, 0.15);
+      color: #0a66c2;
     }
 
     .tag-email {
-      background: rgba(200, 255, 0, 0.12);
-      color: var(--accent);
+      background: rgba(0, 0, 0, 0.08);
+      color: #333;
     }
 
     .tag-direct {
-      background: rgba(200, 200, 200, 0.1);
-      color: var(--muted);
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--color-muted);
     }
 
     .tag-search {
-      background: rgba(167, 139, 250, 0.15);
-      color: #a78bfa;
+      background: rgba(124, 58, 237, 0.12);
+      color: #7c3aed;
     }
 
     .tag-other {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--muted);
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--color-muted);
     }
 
     /* ── UTM GUIDE ── */
     .utm-guide {
       background: var(--surface);
-      border: 1px solid rgba(200, 255, 0, 0.25);
-      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
       padding: 2rem;
+      backdrop-filter: blur(6px);
     }
 
     .utm-guide p {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--color-black);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
 
     .utm-link-block {
-      background: var(--bg);
+      background: rgba(255, 255, 255, 0.5);
       border: 1px dashed var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 1rem 1.25rem;
       margin-bottom: 1rem;
     }
 
     .utm-link-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      color: var(--color-muted);
+      margin-bottom: 0.4rem;
     }
 
     .utm-link-url {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
+      font-family: monospace;
+      font-size: 1.2rem;
+      color: #1a1a1a;
       word-break: break-all;
       line-height: 1.6;
     }
 
     .btn-copy {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
       background: transparent;
       border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 5px;
+      color: var(--color-black);
+      border-radius: 6px;
+      padding: 0.3rem 0.85rem;
       cursor: pointer;
       margin-top: 0.5rem;
       transition: all 0.2s;
     }
 
     .btn-copy:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      background: var(--color-black);
+      color: var(--color-white);
     }
 
     /* ── OWNER PANEL ── */
     .owner-panel {
       background: var(--surface);
-      border: 1px solid rgba(200, 255, 0, 0.3);
-      border-radius: 12px;
+      border: 1.5px solid rgba(26, 122, 26, 0.4);
+      border-radius: 16px;
       padding: 2rem;
+      backdrop-filter: blur(6px);
     }
 
     .owner-panel p {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--color-black);
+      margin-bottom: 1.2rem;
       line-height: 1.7;
-    }
-
-    .owner-panel p strong {
-      color: var(--text);
     }
 
     .owner-status {
@@ -627,28 +667,28 @@
       align-items: center;
       gap: 1rem;
       padding: 1rem 1.25rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--surface2);
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
     .status-dot {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     .status-dot.active {
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+      background: #1a7a1a;
+      box-shadow: 0 0 8px #1a7a1a;
     }
 
     .status-dot.inactive {
-      background: var(--muted);
+      background: var(--color-muted);
     }
 
     .owner-btns {
@@ -658,14 +698,14 @@
     }
 
     .btn-enable-owner {
-      background: var(--accent);
-      color: #000;
+      background: #1a7a1a;
+      color: white;
       border: none;
-      border-radius: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
       font-weight: 700;
-      padding: 0.65rem 1.25rem;
+      padding: 0.65rem 1.5rem;
       cursor: pointer;
       transition: opacity 0.2s;
     }
@@ -676,37 +716,41 @@
 
     .btn-disable-owner {
       background: transparent;
-      color: #ff3333;
-      border: 1px solid #ff3333;
-      border-radius: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      padding: 0.65rem 1.25rem;
+      color: #cc2222;
+      border: 1.5px solid #cc2222;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      padding: 0.65rem 1.5rem;
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .btn-disable-owner:hover {
-      background: #ff3333;
-      color: #fff;
+      background: #cc2222;
+      color: white;
     }
 
     /* ── EMPTY ── */
     .empty {
       text-align: center;
       padding: 3rem;
-      font-family: var(--font-mono);
-      color: var(--muted);
-      font-size: 0.85rem;
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--color-muted);
     }
 
     .empty .empty-icon {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      #login-screen h1 {
+        font-size: 3.5rem;
+      }
+
       .two-col {
         grid-template-columns: 1fr;
       }
@@ -715,12 +759,16 @@
         padding: 1.25rem;
       }
 
-      header {
-        padding: 1rem 1.25rem;
+      .stat-value {
+        font-size: 3.5rem;
       }
 
       .page-bar-label {
         width: 110px;
+      }
+
+      .dash-nav-title {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -728,41 +776,56 @@
 
 <body>
 
+  <!-- =================== VIEWER BANNER =================== -->
+  <div id="viewer-banner">
+  </div>
+
   <!-- =================== LOGIN =================== -->
   <div id="login-screen">
-    <h1>Portfolio <span>Analytics</span></h1>
+    <h1>Données Portfolio</h1>
     <div class="login-box">
-      <label>Mot de passe</label>
+      <label>Mot de passe (admin)</label>
       <input type="password" id="pwd-input" placeholder="••••••••" autocomplete="current-password" />
       <div class="login-error" id="login-error">❌ Mot de passe incorrect</div>
       <button class="btn-login" onclick="checkLogin()">Accéder au dashboard</button>
     </div>
-    <p style="font-family:var(--font-mono);font-size:1rem;color:var(--text)">Le mot de passe est admin</p>
   </div>
 
   <!-- =================== DASHBOARD =================== -->
   <div id="dashboard">
-    <header>
-      <h1>Analytics <span>Portfolio</span></h1>
+
+    <!-- NAVBAR -->
+    <nav class="dash-nav">
+      <a class="dash-brand" href="index.html">B</a>
+      <span class="dash-nav-title">Dashboard Analytics</span>
       <div class="header-actions">
-        <span class="badge-live">● Live</span>
-        <button class="btn-action btn-owner" id="btn-owner-toggle" onclick="togglePanel('owner-panel', this)">👤
-          Propriétaire</button>
-        <button class="btn-action" onclick="togglePanel('utm-guide', null)">🔗 Mes liens UTM</button>
-        <button class="btn-action btn-reset" onclick="resetData()">Réinitialiser</button>
+
+        <!-- Bouton Mode propriétaire — owner seulement -->
+        <button class="btn-action btn-owner owner-only" id="btn-owner-toggle"
+          onclick="togglePanel('owner-panel', this)">
+          👤 Propriétaire
+        </button>
+
+        <!-- Bouton Liens UTM — viewer peut voir mais pas modifier -->
+        <button class="btn-action owner-only" onclick="togglePanel('utm-guide', null)">🔗 Mes liens UTM</button>
+
+        <!-- Réinitialiser — owner seulement -->
+        <button class="btn-action btn-reset owner-only" onclick="resetData()">🗑 Réinitialiser</button>
+
         <button class="btn-action" onclick="logout()">Déconnexion</button>
       </div>
-    </header>
+    </nav>
 
+    <!-- OWNER BANNER -->
     <div id="owner-banner">✅ Mode propriétaire actif — tes visites ne sont pas comptées.</div>
 
     <div class="main">
 
-      <!-- Panneau propriétaire -->
-      <div class="owner-panel" id="owner-panel" style="display:none">
+      <!-- Panneau propriétaire — owner seulement -->
+      <div class="owner-panel owner-only" id="owner-panel" style="display:none">
         <div class="section-title">Mode propriétaire</div>
         <p>Active ce mode sur <strong>chaque navigateur et appareil que tu utilises</strong>
-          (Chrome avec benji42423@gmail.com, bferland.contact@gmail.com, téléphone, etc.).<br>
+          (Chrome, téléphone, etc.).<br>
           Une fois activé, <strong>toutes tes visites sont ignorées</strong> sur ce navigateur.</p>
         <div class="owner-status">
           <div class="status-dot" id="status-dot"></div>
@@ -776,11 +839,11 @@
 
       <!-- Guide liens UTM -->
       <div class="utm-guide" id="utm-guide" style="display:none">
-        <div class="section-title">Mes liens personnalisés à utiliser</div>
+        <div class="section-title">Mes liens personnalisés</div>
         <p>
-          Remplace <strong>TON_DOMAINE.com</strong> par ton vrai domaine, puis utilise ces liens :<br>
-          LinkedIn → colle le lien LinkedIn dans ton profil.<br>
-          E-mail → colle le lien E-mail dans ta signature ou tes e-mails de candidature.<br>
+          Remplace le domaine ci-dessous par ton vrai domaine, puis utilise ces liens :<br>
+          <strong>LinkedIn</strong> → colle dans ton profil.<br>
+          <strong>E-mail</strong> → colle dans ta signature ou tes candidatures.<br>
           Le dashboard saura exactement d'où vient chaque visiteur.
         </p>
 
@@ -789,28 +852,33 @@
           <div class="utm-link-url" id="url-linkedin">
             https://benjaminferland.github.io/portfolio-benjamin-ferland/?utm_source=linkedin&utm_medium=profile
           </div>
-          <button class="btn-copy" onclick="copyUrl('url-linkedin')">Copier</button>
+          <!-- Copier désactivé pour viewer -->
+          <button class="btn-copy owner-only" onclick="copyUrl('url-linkedin')">Copier</button>
         </div>
 
         <div class="utm-link-block">
           <div class="utm-link-label">📧 Lien pour tes e-mails (signature / candidature)</div>
           <div class="utm-link-url" id="url-email">
-            https://benjaminferland.github.io/portfolio-benjamin-ferland/?utm_source=email&utm_medium=email</div>
-          <button class="btn-copy" onclick="copyUrl('url-email')">Copier</button>
+            https://benjaminferland.github.io/portfolio-benjamin-ferland/?utm_source=email&utm_medium=email
+          </div>
+          <button class="btn-copy owner-only" onclick="copyUrl('url-email')">Copier</button>
         </div>
 
-        <div class="utm-link-block">
+        <div class="utm-link-block owner-only">
           <div class="utm-link-label">✏️ Personnalise le domaine ici</div>
           <input type="text" id="domain-input" placeholder="ex: benjaminferland.com"
-            style="background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:var(--font-mono);font-size:0.85rem;padding:0.6rem 0.85rem;width:100%;outline:none;margin-top:0.25rem"
+            style="background:rgba(255,255,255,0.6);border:1px solid var(--border);border-radius:8px;color:var(--color-black);font-family:var(--font-body);font-size:1.5rem;padding:0.6rem 0.85rem;width:100%;outline:none;margin-top:0.25rem"
             oninput="updateLinks()" />
         </div>
       </div>
 
       <!-- Stats -->
-      <div class="stats-grid" id="stats-grid"></div>
+      <div>
+        <div class="section-title">Vue d'ensemble</div>
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
 
-      <!-- Sources de trafic — les 3 grandes catégories -->
+      <!-- Sources de trafic -->
       <div>
         <div class="section-title">Comment ils ont trouvé le portfolio</div>
         <div class="source-grid" id="source-grid"></div>
@@ -822,7 +890,7 @@
         <div class="page-bars" id="page-bars"></div>
       </div>
 
-      <!-- Appareils -->
+      <!-- Appareils + Langues -->
       <div class="two-col">
         <div class="panel">
           <div class="section-title">Appareils</div>
@@ -834,7 +902,7 @@
         </div>
       </div>
 
-      <!-- Tableau journal -->
+      <!-- Journal des visites -->
       <div>
         <div class="section-title">Journal des visites</div>
         <div class="table-wrap">
@@ -855,23 +923,33 @@
         </div>
       </div>
 
-    </div>
-  </div>
+    </div><!-- /main -->
+  </div><!-- /dashboard -->
 
   <script>
     // ── CONFIG ────────────────────────────────────────────────
-    // Change "benjamin2025" par ton propre mot de passe !
-    const PASSWORD = "admin";
+    // 🔒 Mot de passe VIEWER (lecture seule) — partageable
+    const PASSWORD_VIEWER = "admin";
+
+    // 🔑 Mot de passe OWNER (accès complet) — garde le secret !
+    const PASSWORD_OWNER = "ben4242";
+
     const STORAGE_KEY = "portfolio_analytics";
     const OWNER_FLAG = "portfolio_owner";
 
+    // Rôle courant : null | "viewer" | "owner"
+    let currentRole = null;
+
     // ── LOGIN ─────────────────────────────────────────────────
     function checkLogin() {
-      if (document.getElementById("pwd-input").value === PASSWORD) {
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("dashboard").style.display = "block";
-        updateOwnerUI();
-        renderDashboard();
+      const val = document.getElementById("pwd-input").value;
+
+      if (val === PASSWORD_OWNER) {
+        currentRole = "owner";
+        showDashboard();
+      } else if (val === PASSWORD_VIEWER) {
+        currentRole = "viewer";
+        showDashboard();
       } else {
         document.getElementById("login-error").style.display = "block";
         document.getElementById("pwd-input").value = "";
@@ -883,19 +961,46 @@
       if (e.key === "Enter") checkLogin();
     });
 
+    function showDashboard() {
+      document.getElementById("login-screen").style.display = "none";
+      document.getElementById("dashboard").style.display = "block";
+      applyRoleUI();
+      updateOwnerUI();
+      renderDashboard();
+    }
+
     function logout() {
+      currentRole = null;
       document.getElementById("login-screen").style.display = "flex";
       document.getElementById("dashboard").style.display = "none";
+      document.getElementById("viewer-banner");
       document.getElementById("pwd-input").value = "";
     }
 
-    function resetData() {
-      if (confirm("⚠️ Supprimer TOUTES les données analytics ? Irréversible.")) {
-        localStorage.removeItem(STORAGE_KEY);
-        renderDashboard();
-      }
+    // ── RÔLE UI ───────────────────────────────────────────────
+    function applyRoleUI() {
+      const isOwner = currentRole === "owner";
+
+      // Bandeau viewer
+      document.getElementById("viewer-banner").classList.toggle("show", !isOwner);
+
+      // Éléments owner-only : affichés et actifs seulement pour owner
+      document.querySelectorAll(".owner-only").forEach(el => {
+        if (isOwner) {
+          el.style.display = "";
+          el.classList.remove("viewer-disabled");
+        } else {
+          // Boutons dans la navbar : on les cache carrément
+          if (el.tagName === "BUTTON") {
+            el.style.display = "none";
+          } else {
+            el.style.display = "none";
+          }
+        }
+      });
     }
 
+    // ── TOGGLE PANELS ─────────────────────────────────────────
     function togglePanel(id, btn) {
       const el = document.getElementById(id);
       const visible = el.style.display !== "none";
@@ -907,12 +1012,14 @@
     function isOwner() { return localStorage.getItem(OWNER_FLAG) === "1"; }
 
     function enableOwner() {
+      if (currentRole !== "owner") return;
       localStorage.setItem(OWNER_FLAG, "1");
       updateOwnerUI();
       alert("✅ Mode propriétaire activé !\nTes visites ne seront plus comptées sur ce navigateur.");
     }
 
     function disableOwner() {
+      if (currentRole !== "owner") return;
       localStorage.removeItem(OWNER_FLAG);
       updateOwnerUI();
       alert("❌ Mode propriétaire désactivé.\nTes visites seront maintenant comptées.");
@@ -924,16 +1031,26 @@
       const dot = document.getElementById("status-dot");
       const text = document.getElementById("status-text");
       const toggle = document.getElementById("btn-owner-toggle");
-      banner.classList.toggle("show", owner);
-      dot.className = "status-dot " + (owner ? "active" : "inactive");
-      text.textContent = owner
+      if (banner) banner.classList.toggle("show", owner);
+      if (dot) dot.className = "status-dot " + (owner ? "active" : "inactive");
+      if (text) text.textContent = owner
         ? "Mode propriétaire ACTIF — tes visites sont ignorées."
         : "Mode propriétaire INACTIF — tes visites sont comptées.";
       if (toggle) toggle.classList.toggle("active", owner);
     }
 
+    // ── RESET ─────────────────────────────────────────────────
+    function resetData() {
+      if (currentRole !== "owner") return;
+      if (confirm("⚠️ Supprimer TOUTES les données analytics ? Cette action est irréversible.")) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderDashboard();
+      }
+    }
+
     // ── LIENS UTM ─────────────────────────────────────────────
     function updateLinks() {
+      if (currentRole !== "owner") return;
       let domain = document.getElementById("domain-input").value.trim();
       if (!domain) domain = "TON_DOMAINE.com";
       if (!domain.startsWith("http")) domain = "https://" + domain;
@@ -944,9 +1061,10 @@
     }
 
     function copyUrl(id) {
-      const text = document.getElementById(id).textContent;
+      if (currentRole !== "owner") return;
+      const text = document.getElementById(id).textContent.trim();
       navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector(`#${id} ~ .btn-copy`);
+        const btn = document.querySelector(`[onclick="copyUrl('${id}')"]`);
         if (btn) { btn.textContent = "✅ Copié !"; setTimeout(() => btn.textContent = "Copier", 2000); }
       });
     }
@@ -962,7 +1080,7 @@
       }
     }
 
-    // ── ICÔNE & TAG PAR SOURCE ────────────────────────────────
+    // ── ICÔNES PAR SOURCE ─────────────────────────────────────
     const SOURCE_META = {
       "LinkedIn": { icon: "💼", tagClass: "tag-linkedin" },
       "E-mail": { icon: "📧", tagClass: "tag-email" },
@@ -970,7 +1088,6 @@
       "Moteur de recherche": { icon: "🔍", tagClass: "tag-search" },
       "Autre site": { icon: "🌐", tagClass: "tag-other" },
     };
-
     function sourceMeta(source) {
       return SOURCE_META[source] || { icon: "🌐", tagClass: "tag-other" };
     }
@@ -986,37 +1103,36 @@
       const pages = Object.values(pageViews).reduce((a, b) => a + b, 0);
       const uniques = new Set(visitors.map(v => v.id)).size;
 
-      // ── Stats ──
+      // Stats
       document.getElementById("stats-grid").innerHTML = `
-      <div class="stat-card">
-        <div class="stat-label">Sessions totales</div>
-        <div class="stat-value">${data.totalVisits}</div>
-        <div class="stat-sub">visiteurs uniques (par session)</div>
-      </div>
-      <div class="stat-card c2">
-        <div class="stat-label">Pages vues</div>
-        <div class="stat-value">${pages}</div>
-        <div class="stat-sub">toutes pages confondues</div>
-      </div>
-      <div class="stat-card c3">
-        <div class="stat-label">IDs uniques</div>
-        <div class="stat-value">${uniques}</div>
-        <div class="stat-sub">IDs de session distincts</div>
-      </div>
-      <div class="stat-card c4">
-        <div class="stat-label">Mobile</div>
-        <div class="stat-value">${mobiles}</div>
-        <div class="stat-sub">· ${desktops} desktop</div>
-      </div>
-    `;
+        <div class="stat-card">
+          <div class="stat-label">Sessions totales</div>
+          <div class="stat-value">${data.totalVisits}</div>
+          <div class="stat-sub">visiteurs uniques (par session)</div>
+        </div>
+        <div class="stat-card c2">
+          <div class="stat-label">Pages vues</div>
+          <div class="stat-value">${pages}</div>
+          <div class="stat-sub">toutes pages confondues</div>
+        </div>
+        <div class="stat-card c3">
+          <div class="stat-label">IDs uniques</div>
+          <div class="stat-value">${uniques}</div>
+          <div class="stat-sub">IDs de session distincts</div>
+        </div>
+        <div class="stat-card c4">
+          <div class="stat-label">Mobile</div>
+          <div class="stat-value">${mobiles}</div>
+          <div class="stat-sub">· ${desktops} desktop</div>
+        </div>
+      `;
 
-      // ── Sources ──
+      // Sources
       const sourceCounts = {};
       visitors.forEach(v => {
         const s = v.source || "Direct";
         sourceCounts[s] = (sourceCounts[s] || 0) + 1;
       });
-
       const totalV = visitors.length || 1;
       const sourceEntries = Object.entries(sourceCounts).sort((a, b) => b[1] - a[1]);
 
@@ -1025,36 +1141,34 @@
           const { icon } = sourceMeta(src);
           const pct = Math.round(count / totalV * 100);
           return `
-            <div class="source-card">
-              <div class="source-icon">${icon}</div>
-              <div class="source-info">
-                <div class="source-name">${src}</div>
-                <div class="source-count">${count} visite${count > 1 ? "s" : ""}</div>
-              </div>
-              <div class="source-pct">${pct}%</div>
-            </div>
-          `;
+              <div class="source-card">
+                <div class="source-icon">${icon}</div>
+                <div class="source-info">
+                  <div class="source-name">${src}</div>
+                  <div class="source-count">${count} visite${count > 1 ? "s" : ""}</div>
+                </div>
+                <div class="source-pct">${pct}%</div>
+              </div>`;
         }).join("")
         : `<div class="empty"><div class="empty-icon">🔍</div>Aucune donnée encore</div>`;
 
-      // ── Barres pages ──
+      // Barres pages
       const pageEntries = Object.entries(pageViews).sort((a, b) => b[1] - a[1]);
       const maxV = pageEntries.length ? pageEntries[0][1] : 1;
 
       document.getElementById("page-bars").innerHTML = pageEntries.length
         ? pageEntries.map(([page, count]) => `
-          <div class="page-bar-row">
-            <div class="page-bar-label">${page}</div>
-            <div class="page-bar-track">
-              <div class="page-bar-fill" style="width:${Math.round(count / maxV * 100)}%">
-                <span class="page-bar-count">${count}</span>
+            <div class="page-bar-row">
+              <div class="page-bar-label">${page}</div>
+              <div class="page-bar-track">
+                <div class="page-bar-fill" style="width:${Math.round(count / maxV * 100)}%">
+                  <span class="page-bar-count">${count}</span>
+                </div>
               </div>
-            </div>
-          </div>
-        `).join("")
+            </div>`).join("")
         : `<div class="empty"><div class="empty-icon">📊</div>Aucune donnée encore</div>`;
 
-      // ── Donut appareils ──
+      // Donut appareils
       const total = mobiles + desktops || 1;
       const mobPct = Math.round(mobiles / total * 100);
       const deskPct = 100 - mobPct;
@@ -1062,22 +1176,21 @@
       const mobDash = (mobiles / total) * circ;
 
       document.getElementById("donut-wrap").innerHTML = `
-      <svg width="130" height="130" viewBox="0 0 130 130">
-        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#1a1a1a" stroke-width="22"/>
-        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#60a5fa" stroke-width="22"
-          stroke-dasharray="${circ}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
-        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#ff6b35" stroke-width="22"
-          stroke-dasharray="${mobDash} ${circ - mobDash}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
-        <text x="65" y="60" text-anchor="middle" font-family="Space Mono" font-size="16" font-weight="700" fill="#e8e8e8">${mobPct}%</text>
-        <text x="65" y="78" text-anchor="middle" font-family="Space Mono" font-size="10" fill="#666">mobile</text>
-      </svg>
-      <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#ff6b35"></div>Mobile — ${mobiles} (${mobPct}%)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>Desktop — ${desktops} (${deskPct}%)</div>
-      </div>
-    `;
+        <svg width="130" height="130" viewBox="0 0 130 130">
+          <circle cx="65" cy="65" r="${r}" fill="none" stroke="#DFDAD5" stroke-width="22"/>
+          <circle cx="65" cy="65" r="${r}" fill="none" stroke="#60a5fa" stroke-width="22"
+            stroke-dasharray="${circ}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
+          <circle cx="65" cy="65" r="${r}" fill="none" stroke="#ff6b35" stroke-width="22"
+            stroke-dasharray="${mobDash} ${circ - mobDash}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
+          <text x="65" y="60" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#000">${mobPct}%</text>
+          <text x="65" y="78" text-anchor="middle" font-size="11" fill="#666">mobile</text>
+        </svg>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#ff6b35"></div>Mobile — ${mobiles} (${mobPct}%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>Desktop — ${desktops} (${deskPct}%)</div>
+        </div>`;
 
-      // ── Langues ──
+      // Langues
       const langs = {};
       visitors.forEach(v => { const l = v.langue || "inconnu"; langs[l] = (langs[l] || 0) + 1; });
       const langEntries = Object.entries(langs).sort((a, b) => b[1] - a[1]);
@@ -1085,14 +1198,13 @@
       document.getElementById("lang-list").innerHTML = langEntries.length
         ? `<div style="display:flex;flex-direction:column;gap:0.5rem">` +
         langEntries.map(([lang, count]) => `
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0.75rem;background:var(--surface2);border-radius:6px;font-family:var(--font-mono);font-size:0.78rem">
-            <span>${lang}</span>
-            <span style="color:var(--accent);font-weight:700">${count}</span>
-          </div>
-        `).join("") + `</div>`
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1rem;background:var(--surface2);border-radius:8px;font-family:var(--font-body);font-size:1.5rem">
+              <span>${lang}</span>
+              <span style="font-weight:700">${count}</span>
+            </div>`).join("") + `</div>`
         : `<div class="empty"><div class="empty-icon">🌍</div>Aucune donnée</div>`;
 
-      // ── Tableau ──
+      // Tableau
       const sorted = [...visitors].reverse();
       document.getElementById("visitors-table").innerHTML = sorted.length
         ? sorted.map((v, i) => {
@@ -1104,14 +1216,14 @@
             ? `<span class="tag tag-mobile">Mobile</span>`
             : `<span class="tag tag-desktop">Desktop</span>`;
           return `<tr>
-            <td style="color:var(--muted)">${sorted.length - i}</td>
-            <td>${dateStr}</td>
-            <td>${v.page}</td>
-            <td><span class="tag ${tagClass}">${icon} ${v.source || "Direct"}</span></td>
-            <td style="color:var(--muted);font-size:0.72rem">${v.detail || "—"}</td>
-            <td>${deviceTag}</td>
-            <td style="color:var(--muted)">${v.langue || "—"}</td>
-          </tr>`;
+              <td style="color:var(--color-muted)">${sorted.length - i}</td>
+              <td>${dateStr}</td>
+              <td>${v.page}</td>
+              <td><span class="tag ${tagClass}">${icon} ${v.source || "Direct"}</span></td>
+              <td style="color:var(--color-muted);font-size:1.2rem">${v.detail || "—"}</td>
+              <td>${deviceTag}</td>
+              <td style="color:var(--color-muted)">${v.langue || "—"}</td>
+            </tr>`;
         }).join("")
         : `<tr><td colspan="7" class="empty"><div class="empty-icon">👥</div>Aucun visiteur enregistré</td></tr>`;
     }
