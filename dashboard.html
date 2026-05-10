@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Analytics Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #c8ff00;
+      --accent2: #ff6b35;
+      --text: #e8e8e8;
+      --muted: #666;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'Syne', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+    }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 1.5rem;
+    }
+
+    #login-screen h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    #login-screen h1 span {
+      color: var(--accent);
+    }
+
+    .login-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 340px;
+    }
+
+    .login-box label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .login-box input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .login-box input:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-login {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-login:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .login-error {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent2);
+      text-align: center;
+      display: none;
+    }
+
+    /* ── DASHBOARD ── */
+    #dashboard {
+      display: none;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-live {
+      background: rgba(200, 255, 0, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .btn-action {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .btn-owner {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-owner:hover,
+    .btn-owner.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .btn-reset {
+      border-color: #ff3333;
+      color: #ff3333;
+    }
+
+    .btn-reset:hover {
+      background: #ff3333;
+      color: #fff;
+    }
+
+    /* ── OWNER BANNER ── */
+    #owner-banner {
+      display: none;
+      background: rgba(200, 255, 0, 0.08);
+      border-bottom: 1px solid rgba(200, 255, 0, 0.3);
+      padding: 0.75rem 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    #owner-banner.show {
+      display: flex;
+    }
+
+    .main {
+      padding: 2.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* ── STAT CARDS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .stat-card.c2::before {
+      background: var(--accent2);
+    }
+
+    .stat-card.c3::before {
+      background: #a78bfa;
+    }
+
+    .stat-card.c4::before {
+      background: #60a5fa;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .stat-value {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .stat-card.c2 .stat-value {
+      color: var(--accent2);
+    }
+
+    .stat-card.c3 .stat-value {
+      color: #a78bfa;
+    }
+
+    .stat-card.c4 .stat-value {
+      color: #60a5fa;
+    }
+
+    .stat-sub {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PAGE BARS ── */
+    .page-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .page-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .page-bar-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      width: 180px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .page-bar-track {
+      flex: 1;
+      background: var(--surface2);
+      border-radius: 4px;
+      height: 28px;
+      overflow: hidden;
+    }
+
+    .page-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.8s cubic-bezier(.25, .8, .25, 1);
+      display: flex;
+      align-items: center;
+      padding-left: 0.75rem;
+      min-width: 36px;
+    }
+
+    .page-bar-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #000;
+      font-weight: 700;
+    }
+
+    /* ── SOURCE CARDS ── */
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .source-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .source-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      width: 2.5rem;
+      text-align: center;
+    }
+
+    .source-info {
+      flex: 1;
+    }
+
+    .source-name {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .source-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .source-pct {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── TWO COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    /* ── DONUT ── */
+    .donut-wrap {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── TABLE ── */
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    thead tr {
+      background: var(--surface2);
+    }
+
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    td {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    tr:hover td {
+      background: rgba(200, 255, 0, 0.03);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .tag-mobile {
+      background: rgba(255, 107, 53, 0.15);
+      color: var(--accent2);
+    }
+
+    .tag-desktop {
+      background: rgba(96, 165, 250, 0.15);
+      color: #60a5fa;
+    }
+
+    .tag-linkedin {
+      background: rgba(10, 102, 194, 0.2);
+      color: #6ab4ff;
+    }
+
+    .tag-email {
+      background: rgba(200, 255, 0, 0.12);
+      color: var(--accent);
+    }
+
+    .tag-direct {
+      background: rgba(200, 200, 200, 0.1);
+      color: var(--muted);
+    }
+
+    .tag-search {
+      background: rgba(167, 139, 250, 0.15);
+      color: #a78bfa;
+    }
+
+    .tag-other {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+    }
+
+    /* ── UTM GUIDE ── */
+    .utm-guide {
+      background: var(--surface);
+      border: 1px solid rgba(200, 255, 0, 0.25);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .utm-guide p {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .utm-link-block {
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .utm-link-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .utm-link-url {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      word-break: break-all;
+      line-height: 1.6;
+    }
+
+    .btn-copy {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── OWNER PANEL ── */
+    .owner-panel {
+      background: var(--surface);
+      border: 1px solid rgba(200, 255, 0, 0.3);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .owner-panel p {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .owner-panel p strong {
+      color: var(--text);
+    }
+
+    .owner-status {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-dot.active {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .status-dot.inactive {
+      background: var(--muted);
+    }
+
+    .owner-btns {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-enable-owner {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-enable-owner:hover {
+      opacity: 0.85;
+    }
+
+    .btn-disable-owner {
+      background: transparent;
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 0.65rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-disable-owner:hover {
+      background: #ff3333;
+      color: #fff;
+    }
+
+    /* ── EMPTY ── */
+    .empty {
+      text-align: center;
+      padding: 3rem;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .empty .empty-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 1.25rem;
+      }
+
+      header {
+        padding: 1rem 1.25rem;
+      }
+
+      .page-bar-label {
+        width: 110px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== LOGIN =================== -->
+  <div id="login-screen">
+    <h1>Portfolio <span>Analytics</span></h1>
+    <div class="login-box">
+      <label>Mot de passe</label>
+      <input type="password" id="pwd-input" placeholder="••••••••" autocomplete="current-password" />
+      <div class="login-error" id="login-error">❌ Mot de passe incorrect</div>
+      <button class="btn-login" onclick="checkLogin()">Accéder au dashboard</button>
+    </div>
+    <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--muted)">Réservé à Benjamin Ferland</p>
+  </div>
+
+  <!-- =================== DASHBOARD =================== -->
+  <div id="dashboard">
+    <header>
+      <h1>Analytics <span>Portfolio</span></h1>
+      <div class="header-actions">
+        <span class="badge-live">● Live</span>
+        <button class="btn-action btn-owner" id="btn-owner-toggle" onclick="togglePanel('owner-panel', this)">👤
+          Propriétaire</button>
+        <button class="btn-action" onclick="togglePanel('utm-guide', null)">🔗 Mes liens UTM</button>
+        <button class="btn-action btn-reset" onclick="resetData()">Réinitialiser</button>
+        <button class="btn-action" onclick="logout()">Déconnexion</button>
+      </div>
+    </header>
+
+    <div id="owner-banner">✅ Mode propriétaire actif — tes visites ne sont pas comptées.</div>
+
+    <div class="main">
+
+      <!-- Panneau propriétaire -->
+      <div class="owner-panel" id="owner-panel" style="display:none">
+        <div class="section-title">Mode propriétaire</div>
+        <p>Active ce mode sur <strong>chaque navigateur et appareil que tu utilises</strong>
+          (Chrome avec benji42423@gmail.com, bferland.contact@gmail.com, téléphone, etc.).<br>
+          Une fois activé, <strong>toutes tes visites sont ignorées</strong> sur ce navigateur.</p>
+        <div class="owner-status">
+          <div class="status-dot" id="status-dot"></div>
+          <span id="status-text"></span>
+        </div>
+        <div class="owner-btns">
+          <button class="btn-enable-owner" onclick="enableOwner()">✅ Activer sur ce navigateur</button>
+          <button class="btn-disable-owner" onclick="disableOwner()">❌ Désactiver</button>
+        </div>
+      </div>
+
+      <!-- Guide liens UTM -->
+      <div class="utm-guide" id="utm-guide" style="display:none">
+        <div class="section-title">Mes liens personnalisés à utiliser</div>
+        <p>
+          Remplace <strong>TON_DOMAINE.com</strong> par ton vrai domaine, puis utilise ces liens :<br>
+          LinkedIn → colle le lien LinkedIn dans ton profil.<br>
+          E-mail → colle le lien E-mail dans ta signature ou tes e-mails de candidature.<br>
+          Le dashboard saura exactement d'où vient chaque visiteur.
+        </p>
+
+        <div class="utm-link-block">
+          <div class="utm-link-label">💼 Lien pour ton profil LinkedIn</div>
+          <div class="utm-link-url" id="url-linkedin">
+            https://benjaminferland.github.io/portfolio-benjamin-ferland/?utm_source=linkedin&utm_medium=profile
+          </div>
+          <button class="btn-copy" onclick="copyUrl('url-linkedin')">Copier</button>
+        </div>
+
+        <div class="utm-link-block">
+          <div class="utm-link-label">📧 Lien pour tes e-mails (signature / candidature)</div>
+          <div class="utm-link-url" id="url-email">
+            https://benjaminferland.github.io/portfolio-benjamin-ferland/?utm_source=email&utm_medium=email</div>
+          <button class="btn-copy" onclick="copyUrl('url-email')">Copier</button>
+        </div>
+
+        <div class="utm-link-block">
+          <div class="utm-link-label">✏️ Personnalise le domaine ici</div>
+          <input type="text" id="domain-input" placeholder="ex: benjaminferland.com"
+            style="background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:var(--font-mono);font-size:0.85rem;padding:0.6rem 0.85rem;width:100%;outline:none;margin-top:0.25rem"
+            oninput="updateLinks()" />
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" id="stats-grid"></div>
+
+      <!-- Sources de trafic — les 3 grandes catégories -->
+      <div>
+        <div class="section-title">Comment ils ont trouvé le portfolio</div>
+        <div class="source-grid" id="source-grid"></div>
+      </div>
+
+      <!-- Vues par page -->
+      <div>
+        <div class="section-title">Vues par page</div>
+        <div class="page-bars" id="page-bars"></div>
+      </div>
+
+      <!-- Appareils -->
+      <div class="two-col">
+        <div class="panel">
+          <div class="section-title">Appareils</div>
+          <div class="donut-wrap" id="donut-wrap"></div>
+        </div>
+        <div class="panel">
+          <div class="section-title">Langues</div>
+          <div id="lang-list"></div>
+        </div>
+      </div>
+
+      <!-- Tableau journal -->
+      <div>
+        <div class="section-title">Journal des visites</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Date & Heure</th>
+                <th>Page</th>
+                <th>Source</th>
+                <th>Détail</th>
+                <th>Appareil</th>
+                <th>Langue</th>
+              </tr>
+            </thead>
+            <tbody id="visitors-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ── CONFIG ────────────────────────────────────────────────
+    // Change "benjamin2025" par ton propre mot de passe !
+    const PASSWORD = "ben_portfolio_4242";
+    const STORAGE_KEY = "portfolio_analytics";
+    const OWNER_FLAG = "portfolio_owner";
+
+    // ── LOGIN ─────────────────────────────────────────────────
+    function checkLogin() {
+      if (document.getElementById("pwd-input").value === PASSWORD) {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        updateOwnerUI();
+        renderDashboard();
+      } else {
+        document.getElementById("login-error").style.display = "block";
+        document.getElementById("pwd-input").value = "";
+        document.getElementById("pwd-input").focus();
+      }
+    }
+
+    document.getElementById("pwd-input").addEventListener("keydown", e => {
+      if (e.key === "Enter") checkLogin();
+    });
+
+    function logout() {
+      document.getElementById("login-screen").style.display = "flex";
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("pwd-input").value = "";
+    }
+
+    function resetData() {
+      if (confirm("⚠️ Supprimer TOUTES les données analytics ? Irréversible.")) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderDashboard();
+      }
+    }
+
+    function togglePanel(id, btn) {
+      const el = document.getElementById(id);
+      const visible = el.style.display !== "none";
+      el.style.display = visible ? "none" : "block";
+      if (btn) btn.classList.toggle("active", !visible);
+    }
+
+    // ── OWNER MODE ────────────────────────────────────────────
+    function isOwner() { return localStorage.getItem(OWNER_FLAG) === "1"; }
+
+    function enableOwner() {
+      localStorage.setItem(OWNER_FLAG, "1");
+      updateOwnerUI();
+      alert("✅ Mode propriétaire activé !\nTes visites ne seront plus comptées sur ce navigateur.");
+    }
+
+    function disableOwner() {
+      localStorage.removeItem(OWNER_FLAG);
+      updateOwnerUI();
+      alert("❌ Mode propriétaire désactivé.\nTes visites seront maintenant comptées.");
+    }
+
+    function updateOwnerUI() {
+      const owner = isOwner();
+      const banner = document.getElementById("owner-banner");
+      const dot = document.getElementById("status-dot");
+      const text = document.getElementById("status-text");
+      const toggle = document.getElementById("btn-owner-toggle");
+      banner.classList.toggle("show", owner);
+      dot.className = "status-dot " + (owner ? "active" : "inactive");
+      text.textContent = owner
+        ? "Mode propriétaire ACTIF — tes visites sont ignorées."
+        : "Mode propriétaire INACTIF — tes visites sont comptées.";
+      if (toggle) toggle.classList.toggle("active", owner);
+    }
+
+    // ── LIENS UTM ─────────────────────────────────────────────
+    function updateLinks() {
+      let domain = document.getElementById("domain-input").value.trim();
+      if (!domain) domain = "TON_DOMAINE.com";
+      if (!domain.startsWith("http")) domain = "https://" + domain;
+      document.getElementById("url-linkedin").textContent =
+        domain + "?utm_source=linkedin&utm_medium=profile";
+      document.getElementById("url-email").textContent =
+        domain + "?utm_source=email&utm_medium=email";
+    }
+
+    function copyUrl(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(`#${id} ~ .btn-copy`);
+        if (btn) { btn.textContent = "✅ Copié !"; setTimeout(() => btn.textContent = "Copier", 2000); }
+      });
+    }
+
+    // ── DONNÉES ───────────────────────────────────────────────
+    function getData() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+          totalVisits: 0, visitors: [], pageViews: {}
+        };
+      } catch {
+        return { totalVisits: 0, visitors: [], pageViews: {} };
+      }
+    }
+
+    // ── ICÔNE & TAG PAR SOURCE ────────────────────────────────
+    const SOURCE_META = {
+      "LinkedIn": { icon: "💼", tagClass: "tag-linkedin" },
+      "E-mail": { icon: "📧", tagClass: "tag-email" },
+      "Direct": { icon: "🔗", tagClass: "tag-direct" },
+      "Moteur de recherche": { icon: "🔍", tagClass: "tag-search" },
+      "Autre site": { icon: "🌐", tagClass: "tag-other" },
+    };
+
+    function sourceMeta(source) {
+      return SOURCE_META[source] || { icon: "🌐", tagClass: "tag-other" };
+    }
+
+    // ── RENDER ────────────────────────────────────────────────
+    function renderDashboard() {
+      const data = getData();
+      const visitors = data.visitors || [];
+      const pageViews = data.pageViews || {};
+
+      const mobiles = visitors.filter(v => v.appareil === "Mobile").length;
+      const desktops = visitors.filter(v => v.appareil === "Desktop").length;
+      const pages = Object.values(pageViews).reduce((a, b) => a + b, 0);
+      const uniques = new Set(visitors.map(v => v.id)).size;
+
+      // ── Stats ──
+      document.getElementById("stats-grid").innerHTML = `
+      <div class="stat-card">
+        <div class="stat-label">Sessions totales</div>
+        <div class="stat-value">${data.totalVisits}</div>
+        <div class="stat-sub">visiteurs uniques (par session)</div>
+      </div>
+      <div class="stat-card c2">
+        <div class="stat-label">Pages vues</div>
+        <div class="stat-value">${pages}</div>
+        <div class="stat-sub">toutes pages confondues</div>
+      </div>
+      <div class="stat-card c3">
+        <div class="stat-label">IDs uniques</div>
+        <div class="stat-value">${uniques}</div>
+        <div class="stat-sub">IDs de session distincts</div>
+      </div>
+      <div class="stat-card c4">
+        <div class="stat-label">Mobile</div>
+        <div class="stat-value">${mobiles}</div>
+        <div class="stat-sub">· ${desktops} desktop</div>
+      </div>
+    `;
+
+      // ── Sources ──
+      const sourceCounts = {};
+      visitors.forEach(v => {
+        const s = v.source || "Direct";
+        sourceCounts[s] = (sourceCounts[s] || 0) + 1;
+      });
+
+      const totalV = visitors.length || 1;
+      const sourceEntries = Object.entries(sourceCounts).sort((a, b) => b[1] - a[1]);
+
+      document.getElementById("source-grid").innerHTML = sourceEntries.length
+        ? sourceEntries.map(([src, count]) => {
+          const { icon } = sourceMeta(src);
+          const pct = Math.round(count / totalV * 100);
+          return `
+            <div class="source-card">
+              <div class="source-icon">${icon}</div>
+              <div class="source-info">
+                <div class="source-name">${src}</div>
+                <div class="source-count">${count} visite${count > 1 ? "s" : ""}</div>
+              </div>
+              <div class="source-pct">${pct}%</div>
+            </div>
+          `;
+        }).join("")
+        : `<div class="empty"><div class="empty-icon">🔍</div>Aucune donnée encore</div>`;
+
+      // ── Barres pages ──
+      const pageEntries = Object.entries(pageViews).sort((a, b) => b[1] - a[1]);
+      const maxV = pageEntries.length ? pageEntries[0][1] : 1;
+
+      document.getElementById("page-bars").innerHTML = pageEntries.length
+        ? pageEntries.map(([page, count]) => `
+          <div class="page-bar-row">
+            <div class="page-bar-label">${page}</div>
+            <div class="page-bar-track">
+              <div class="page-bar-fill" style="width:${Math.round(count / maxV * 100)}%">
+                <span class="page-bar-count">${count}</span>
+              </div>
+            </div>
+          </div>
+        `).join("")
+        : `<div class="empty"><div class="empty-icon">📊</div>Aucune donnée encore</div>`;
+
+      // ── Donut appareils ──
+      const total = mobiles + desktops || 1;
+      const mobPct = Math.round(mobiles / total * 100);
+      const deskPct = 100 - mobPct;
+      const r = 50, circ = 2 * Math.PI * r;
+      const mobDash = (mobiles / total) * circ;
+
+      document.getElementById("donut-wrap").innerHTML = `
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#1a1a1a" stroke-width="22"/>
+        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#60a5fa" stroke-width="22"
+          stroke-dasharray="${circ}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
+        <circle cx="65" cy="65" r="${r}" fill="none" stroke="#ff6b35" stroke-width="22"
+          stroke-dasharray="${mobDash} ${circ - mobDash}" stroke-dashoffset="0" transform="rotate(-90 65 65)"/>
+        <text x="65" y="60" text-anchor="middle" font-family="Space Mono" font-size="16" font-weight="700" fill="#e8e8e8">${mobPct}%</text>
+        <text x="65" y="78" text-anchor="middle" font-family="Space Mono" font-size="10" fill="#666">mobile</text>
+      </svg>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6b35"></div>Mobile — ${mobiles} (${mobPct}%)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>Desktop — ${desktops} (${deskPct}%)</div>
+      </div>
+    `;
+
+      // ── Langues ──
+      const langs = {};
+      visitors.forEach(v => { const l = v.langue || "inconnu"; langs[l] = (langs[l] || 0) + 1; });
+      const langEntries = Object.entries(langs).sort((a, b) => b[1] - a[1]);
+
+      document.getElementById("lang-list").innerHTML = langEntries.length
+        ? `<div style="display:flex;flex-direction:column;gap:0.5rem">` +
+        langEntries.map(([lang, count]) => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0.75rem;background:var(--surface2);border-radius:6px;font-family:var(--font-mono);font-size:0.78rem">
+            <span>${lang}</span>
+            <span style="color:var(--accent);font-weight:700">${count}</span>
+          </div>
+        `).join("") + `</div>`
+        : `<div class="empty"><div class="empty-icon">🌍</div>Aucune donnée</div>`;
+
+      // ── Tableau ──
+      const sorted = [...visitors].reverse();
+      document.getElementById("visitors-table").innerHTML = sorted.length
+        ? sorted.map((v, i) => {
+          const dt = new Date(v.timestamp);
+          const dateStr = dt.toLocaleDateString("fr-CA") + " " +
+            dt.toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" });
+          const { icon, tagClass } = sourceMeta(v.source || "Direct");
+          const deviceTag = v.appareil === "Mobile"
+            ? `<span class="tag tag-mobile">Mobile</span>`
+            : `<span class="tag tag-desktop">Desktop</span>`;
+          return `<tr>
+            <td style="color:var(--muted)">${sorted.length - i}</td>
+            <td>${dateStr}</td>
+            <td>${v.page}</td>
+            <td><span class="tag ${tagClass}">${icon} ${v.source || "Direct"}</span></td>
+            <td style="color:var(--muted);font-size:0.72rem">${v.detail || "—"}</td>
+            <td>${deviceTag}</td>
+            <td style="color:var(--muted)">${v.langue || "—"}</td>
+          </tr>`;
+        }).join("")
+        : `<tr><td colspan="7" class="empty"><div class="empty-icon">👥</div>Aucun visiteur enregistré</td></tr>`;
+    }
+  </script>
+</body>
+
+</html>
