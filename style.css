@@ -499,4 +499,8 @@ img.projets-image:active {
         width: 5rem;
         height: auto;
     }
+
+    .titre-confidentialite {
+        font-size: 2.5rem;
+    }
 }
