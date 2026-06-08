@@ -53,22 +53,24 @@
   </header>
 
   <!-- ===================== SECTION À PROPOS ===================== -->
-  <section id="apropos" class="d-flex flex-column justify-content-center align-items-center">
+  <section class="d-flex flex-column justify-content-center align-items-center">
     <img src="medias/photo_héros.webp" class="img-héros" alt="photo_héros">
-    <p>Je suis un étudiant à sa dernière année en techniques d'intégration multimédia au Collège Montmorency,
+  </section>
+  <section id="apropos" class="container text-center py-5">
+    <h2>À propos</h2>
+    <p>Je suis un étudiant qui vient tout juste de compléter sa techniques d'intégration multimédia au Collège
+      Montmorency de 3 ans,
       passionné par la vidéo. J'adore raconter des histoires immersives et originales qui reflètent ma personnalité et
       mes idées créatives.
       Je m'inspire des films de Quentin Tarantino, du youtubeur Gawx Art et je prête l'oreille à une grande
-      variété de musiques, allant du jazz au classique, pour créer des bandes sonores qui nourrit mes projets variétés.
-    </p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p>Je suis à la cherche d'un poste de vidéaste et monteur vidéo dans le domaine
+      variété de musiques, allant du jazz au classique, pour créer des bandes sonores qui nourrissent mes projets
+      variés.
+      <br><br>
+      Je suis à la cherche d'un poste de vidéaste et monteur vidéo dans le domaine
       audiovisuel, où je pourrai utiliser mes compétences en montage
       et en son tout en partageant ma créativité et ma touche
-      personnelle dans les projets.</p>
+      personnelle dans les projets.
+    </p>
   </section>
 
   <!-- ===================== SECTIONS PROJETS ===================== -->
@@ -76,40 +78,31 @@
     <h2>Mes projets</h2>
 
     <!-- Boutons de filtre -->
-
     <div id="filtres" class="mb-4">
-      <!-- au clic d'un bouton de filtre, tu va changer la valeur de ta données catégorie -->
       <button @click="filtrerCategorie('Tous')" class="btn btn-outline-dark">Tous</button>
       <button @click="filtrerCategorie('Court-Métrage')" class="btn btn-outline-dark">Court-Métrage</button>
       <button @click="filtrerCategorie('Vidéo personnel')" class="btn btn-outline-dark">Vidéo personnel</button>
       <button @click="filtrerCategorie('Stage Location Peephole')" class="btn btn-outline-dark">Stage Location
         Peephole</button>
+      <button @click="filtrerCategorie('Stage Solus hydroponics')" class="btn btn-outline-dark">Stage Solus
+        hydroponics</button>
     </div>
-
-
 
     <div class="row gy-5 justify-content-center">
 
-      <!-- On fait seulement la boucle ici -->
       <template v-for="projet in projets">
-
-        <!-- On filtre ici -->
-        <div class="col-12 col-md-6" v-if="selectedCategory === 'Tous' || projet.categorie === selectedCategory"> <!-- si la
-          catégorie qu'on clique est "Tous", on affiche tout. Sinon, on affiche seulement les projets qui ont la même
-          catégorie que selectedCategory -->
-
-          <!-- Code du prof pour m'aider :  v-if projet.categorie == selectedCategory OU  selectedCategory == Tous-->
+        <div class="col-12 col-md-6" v-if="selectedCategory === 'Tous' || projet.categorie === selectedCategory">
 
           <div>
             <h3 class="mt-4">{{ projet.titre }}</h3>
 
-            <a :href="`page_projet_1.html?projet=${projet.id}`">
+            <a :href="projet.pageLien">
               <img :src="projet.miniature" alt="projet_miniature" class="projets-image" />
             </a>
 
             <p>{{ projet.description_courte }}</p>
 
-            <a :href="`page_projet_1.html?projet=${projet.id}`">
+            <a :href="projet.pageLien">
               <button class="btn-projet mt-3">En savoir plus</button>
             </a>
           </div>
@@ -177,7 +170,6 @@
       <a href="mailto:bferland.contact@gmail.com">bferland.contact@gmail.com</a>
     </p>
     <a href="https://www.linkedin.com/in/benjamin-ferland" target="_blank">
-      <!-- target="_blank: le lien s'ouvre dans un nouvel onglet -->
       <p>LinkedIn</p>
     </a>
     <p class="mt-3">©Benjamin Ferland 2025</p>
@@ -197,8 +189,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <!-- ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <!-- ScrollSmoother -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
   <!-- JS personnalisé -->
   <script src="script.js"></script>
   <script src="analytics.js"></script>
